@@ -54,7 +54,7 @@
             </div>
             <li class="relative px-6 py-1">
 
-               <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" target="blank">
+               <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" >
                   <x-slot name="icon">
                      <i class="fas fa-calendar-day text-xl"></i>
                   </x-slot>
@@ -63,7 +63,7 @@
             </li>
             <li class="relative px-6 py-1">
 
-               <x-nav-link href="{{ route('matieres.index') }}" :active="request()->routeIs('matieres.index')" target="blank">
+               <x-nav-link href="{{ route('matieres.index') }}" :active="request()->routeIs('matieres.index')" >
                   <x-slot name="icon">
                      <i class="fas fa-book-open text-xl"></i>
                   </x-slot>
