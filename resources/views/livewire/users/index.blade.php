@@ -78,7 +78,7 @@
       </div>
       <div class=" w-1/4 flex-wrap items-stretch">
          <input type="text" class="justify-end my-1 py-2 w-full rounded-lg bg-gray-50 text-sm font-semibold "
-            placeholder="Search ..." wire:model="search">
+            placeholder="Recherche ..." wire:model="search">
       </div>
 
    </div>

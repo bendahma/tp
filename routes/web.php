@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\PermissionsController;
+use App\Http\Controllers\MatiereController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,9 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::post('users/suspend',[UserController::class,'suspend'])->name('users.suspend');
     Route::resource('permissions', PermissionsController::class);
 
+    //-------------------------------------------------------------------------
+    
+    Route::resource('matieres', MatiereController::class);
 
-    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
 });
 
 require __DIR__.'/auth.php';
