@@ -25,7 +25,6 @@ class User extends Authenticatable
    }
 
    public static function filter($columnName,$columnValue){
-         // dd($columnName . ' ' . $columnValue);
        return static::query()->where($columnName, 'like','%'.$columnValue.'%'); 
    }
 

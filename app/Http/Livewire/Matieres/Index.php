@@ -30,7 +30,11 @@ class Index extends Component
     public function render()
     {
        $matieres = $this->columnValue === "" ? 
+<<<<<<< HEAD
                    Matiere::search($this->search)->orderBy($this->column, $this->trieePar == '' ? 'ASC' : $this->trieePar )->paginate(10) :
+=======
+                   Matiere::search($this->search)->with('permissions')->orderBy($this->column, $this->trieePar == '' ? 'ASC' : $this->trieePar )->paginate(10) :
+>>>>>>> 3cb14510a7fa4a1cf023b7f0c55f7d0d40c0d72c
                    Matiere::filter($this->columName,$this->columnValue)->orderBy($this->column, $this->trieePar == '' ? 'ASC' : $this->trieePar )->paginate(10) ;
  
        return view('livewire.matieres.index', compact(['matieres']));

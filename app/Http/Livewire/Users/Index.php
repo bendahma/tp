@@ -4,10 +4,6 @@ namespace App\Http\Livewire\Users;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-
-use App\Exports\UsersExport;
-use Maatwebsite\Excel\Facades\Excel;
-
 use App\Models\User ;
 use Spatie\Permission\Models\Permission;
 
@@ -29,10 +25,6 @@ class Index extends Component
    }
    public function resetSort(){
       $this->reset(['trieePar', 'column']);
-   }
-
-   public function download(){
-      return Excel::download(new UsersExport, 'users.xlsx');
    }
     
    public function render()

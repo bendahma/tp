@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Matieres;
 
 use Livewire\Component;
 
+<<<<<<< HEAD
 use App\Models\Matiere ;
 
 class Create extends Component
@@ -31,4 +32,12 @@ class Create extends Component
    {
       return view('livewire.matieres.create');
    }
+=======
+class Create extends Component
+{
+    public function render()
+    {
+        return view('livewire.matieres.create');
+    }
+>>>>>>> 3cb14510a7fa4a1cf023b7f0c55f7d0d40c0d72c
 }

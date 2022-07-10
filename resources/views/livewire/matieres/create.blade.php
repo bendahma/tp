@@ -1,4 +1,5 @@
 <div>
+<<<<<<< HEAD
     <div class="md:flex no-wrap md:-mx-2 ">
         <form wire:submit.prevent="saveNewMatiere">
              @csrf
@@ -24,3 +25,7 @@
     </form>
 </div>
  </div>
+=======
+    {{-- Because she competes with no one, no one can compete with her. --}}
+</div>
+>>>>>>> 3cb14510a7fa4a1cf023b7f0c55f7d0d40c0d72c
