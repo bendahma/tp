@@ -22,9 +22,9 @@
 
    </div>
 
-   <div class="my-3 bg-gray-50 shadow-xs w-1/2 rounded-lg border shadow-xs mx-auto shadow-lg">
+   <div class="my-3 bg-gray-50 shadow-xs w-2/3 rounded-lg border shadow-xs mx-auto shadow-lg">
       <div class="overflow-x-auto w-full">
-         <table class="">
+         <table class="w-full">
             <thead>
                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                   <th class="px-4 py-3">N°</th>
@@ -42,6 +42,23 @@
                   </td>
                   <td class="px-4 py-3 text-sm">
                      {{$matiere->name}}
+                  </td>
+                  <td class="px-4 py-3 text-sm">
+                     <div class="flex justify-evenly items-center ">
+                        <div class="flex justiy-evenly gap-x-2">
+                           <a href="{{route('matieres.edit',$matiere->id)}}"> <i
+                                 class="fas fa-edit text-blue-600 text-lg"></i> </a>
+                           <form method="post" action="{{route('matieres.destroy',$matiere->id)}}" class="">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit">
+                                 <i class="fas fa-trash text-red-600 text-lg"></i>
+                              </button>
+                           </form>
+
+                        </div>
+                     </div>
+
                   </td>
                </tr>
                @empty

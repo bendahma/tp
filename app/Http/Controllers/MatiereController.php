@@ -58,7 +58,7 @@ class MatiereController extends Controller
      */
     public function edit(Matiere $matiere)
     {
-        //
+         return view('admin.matieres.create')->with('matiere',$matiere);
     }
 
     /**
@@ -81,6 +81,8 @@ class MatiereController extends Controller
      */
     public function destroy(Matiere $matiere)
     {
-        //
+        $matiere->delete() ;
+        toast('Matière supprime avec success','success') ;
+        return redirect()->back();
     }
 }
