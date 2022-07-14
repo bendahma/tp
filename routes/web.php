@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\MatiereController;
+use App\Http\Controllers\AnneeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,7 @@ Route::middleware('auth')->group(function () {
     //-------------------------------------------------------------------------
     
     Route::resource('matieres', MatiereController::class);
+    Route::resource('annee', AnneeController::class);
 
 
 });

@@ -54,7 +54,7 @@
             </div>
             <li class="relative px-6 py-1">
 
-               <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" >
+               <x-nav-link href="{{ route('annee.index') }}" :active="request()->routeIs('annee.index')" >
                   <x-slot name="icon">
                      <i class="fas fa-calendar-day text-xl"></i>
                   </x-slot>
