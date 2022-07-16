@@ -8,16 +8,8 @@ use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\AnneeController;
 use App\Http\Controllers\NiveauController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\TPController;
+use App\Http\Controllers\QuestionController;
 
 Route::get('lang/{locale}', LocalizationController::class)->name('lang');
 
@@ -41,6 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('matieres', MatiereController::class);
     Route::resource('annee', AnneeController::class);
     Route::resource('niveau', NiveauController::class);
+    Route::post('tp/{tp}/validation',[TPController::class,'validate'])->name('tp.validation') ;
+    Route::resource('tp', TPController::class);
+    Route::get('tp/{tp}/addQuestion', [QuestionController::class,'addQuestion'])->name('question.addQuestion');
+    Route::resource('question', QuestionController::class);
 
 
 });

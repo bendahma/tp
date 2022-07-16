@@ -4,17 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Traveau ;
 
-class Matiere extends Model
+class Question extends Model
 {
     use HasFactory;
 
     protected $guarded = [] ;
-
-    public function traveaux(){
-      return $this->hasMany(Traveau::class) ;
-   }
 
     public static function search($search){
         if(empty($search)) { return static::query(); }

@@ -4,17 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Traveau ;
 
-class Matiere extends Model
+use App\Models\User;
+use App\Models\Matiere;
+use App\Models\Niveau;
+
+class Traveau extends Model
 {
     use HasFactory;
 
     protected $guarded = [] ;
 
-    public function traveaux(){
-      return $this->hasMany(Traveau::class) ;
-   }
+    public function user(){
+       return $this->belongsTo(User::class) ;
+    }
+
+    public function matiere(){
+       return $this->belongsTo(Matiere::class) ;
+    }
+    
+    public function niveau(){
+       return $this->belongsTo(Niveau::class) ;
+    }
 
     public static function search($search){
         if(empty($search)) { return static::query(); }
@@ -24,4 +35,6 @@ class Matiere extends Model
      public static function filter($columnName,$columnValue){
          return static::query()->where($columnName, 'like','%'.$columnValue.'%'); 
      }
+
+    
 }

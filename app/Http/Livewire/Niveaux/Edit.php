@@ -9,16 +9,17 @@ class Edit extends Component
    public $niveauCompnent,$name ;
 
    public function mount($niveau) {
+      dd($niveau) ;
       $this->niveauCompnent = $niveau ;
       $this->name = $this->niveauCompnent->name ;
    }
 
-   public function updateniveau(){
+   public function updateNiveau(){
       $this->niveauCompnent->update([
          'name' => $this->name ,
       ]);
 
-      toast('Nouvelle niveau scolaire ajouté avec success','success');
+      toast('Niveau scolaire mettre à jours avec success','success');
 
       return redirect()->route('niveau.index');
    }

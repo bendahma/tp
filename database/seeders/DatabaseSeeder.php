@@ -24,7 +24,9 @@ class DatabaseSeeder extends Seeder
          $user = User::find(1) ;
 
          $user->givePermissionTo('users.*');
-         $user->givePermissionTo('users-list');
+         $user->givePermissionTo('users.list');
+         $user->givePermissionTo('tps.list');
+         $user->givePermissionTo('tps.validate');
          $user->assignRole('Super Admin');
     }
 }

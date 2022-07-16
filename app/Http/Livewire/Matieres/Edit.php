@@ -18,7 +18,7 @@ class Edit extends Component
          'name' => $this->name ,
       ]);
 
-      toast('Nouvelle matière ajouté avec success','success');
+      toast('Matière mettre à jours avec success','success');
 
       return redirect()->route('matieres.index');
    }

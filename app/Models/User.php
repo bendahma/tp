@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+use App\Models\Traveau ;
+
 class User extends Authenticatable
 {
    use HasApiTokens, HasFactory, Notifiable, HasRoles;
@@ -18,6 +20,12 @@ class User extends Authenticatable
    protected $hidden = [ 'password', 'remember_token', ];
 
    protected $casts = [ 'email_verified_at' => 'datetime', 'lastLoggedIn' => 'datetime' ];
+
+
+   public function traveaux(){
+      return $this->hasMany(Traveau::class) ;
+   }
+
 
    public static function search($search){
       if(empty($search)) { return static::query(); }

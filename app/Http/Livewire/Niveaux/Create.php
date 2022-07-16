@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire\Annees;
+namespace App\Http\Livewire\Niveaux;
 
 use Livewire\Component;
 
-use App\Models\Annee ;
+use App\Models\Niveau ;
 
 class Create extends Component
 {
@@ -14,21 +14,21 @@ class Create extends Component
       'name' => 'required|string|max:255',
   ];
 
-   public function saveNewAnnee(){
+   public function saveNewNiveau(){
 
       $this->validate();
 
-      $annee = Annee::create([
+      Niveau::create([
          'name' => $this->name,
       ]);
 
       toast('Nouvelle année scolaire ajouté avec success','success');
 
-      return redirect()->route('annee.index');
+      return redirect()->route('niveau.index');
    }
 
    public function render()
    {
-      return view('livewire.annees.create');
+      return view('livewire.niveaux.create');
    }
 }

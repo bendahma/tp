@@ -18,7 +18,7 @@ class Edit extends Component
          'name' => $this->name ,
       ]);
 
-      toast('Nouvelle annee scolaire ajouté avec success','success');
+      toast('L\'nnee scolaire mettre à jours avec success','success');
 
       return redirect()->route('annee.index');
    }

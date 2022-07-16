@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traveau ;
 
-class Matiere extends Model
+class Niveau extends Model
 {
     use HasFactory;
 
