@@ -15,18 +15,23 @@
       </a>
 
    </x-slot>
+   <div class="flex justify-between">
 
-   <div class="text-md mt-3 mb-1">
-      TP : <span class="font-bold text-gray-600 ">{{$tp->name}}</span> Pour les : <span
-         class="font-bold text-gray-600 ">{{$tp->niveau->name}} {{$tp->matiere->name}}</span>
+      <div class="text-md mt-3 mb-1">
+         TP : <span class="font-bold text-gray-600 ">{{$tp->name}}</span> Pour les : <span
+            class="font-bold text-gray-600 ">{{$tp->niveau->name}} {{$tp->matiere->name}}</span>
+      </div>
+      <a class="px-4 py-2 text-sm font-medium leading-5 text-center
+         text-white bg-red-600 border border-transparent rounded-lg 
+         hover:bg-red-700 focus:outline-none focus:ring mx-3" href="">Télécharger TP</a>
    </div>
 
    <div class="">
       <div class="">
 
-         <div class="container mx-auto my-5 p-5">
+         <div class="container mx-auto my-3">
             @if (!isset($question))
-            @livewire('questions.create')
+            @livewire('questions.create',['tp' => $tp], key($tp->id))
             @else
             @livewire('questions.edit', ['question' => $question], key($question->id))
             @endif

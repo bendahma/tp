@@ -16,6 +16,7 @@ class CreateTraveausTable extends Migration
         Schema::create('traveaus', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('body');
             $table->integer('numero_partie')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('matiere_id')->constrained();

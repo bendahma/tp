@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TP;
+use App\Models\Traveau;
 
 class TPController extends Controller
 {
@@ -16,7 +16,7 @@ class TPController extends Controller
        return view('admin.tp.create');
    }
 
-   public function edit(Tp $tp)
+   public function edit(Traveau $tp)
    {
         return view('admin.tp.create')->with('tp',$tp);
    }

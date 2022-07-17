@@ -32,7 +32,7 @@
                   <th class="px-4 py-3">Publie par</th>
                   <th class="px-4 py-3">Matière</th>
                   <th class="px-4 py-3">Niveau</th>
-                  <th class="px-4 py-3">Validé</th>
+                  <th class="px-4 py-3 text-center">Validé</th>
                   <th class="px-4 py-3"></th>
 
                </tr>
@@ -48,7 +48,7 @@
                   <td class="px-4 py-3 text-sm"> {{$tp->user->name}} </td>
                   <td class="px-4 py-3 text-sm"> {{$tp->matiere->name}} </td>
                   <td class="px-4 py-3 text-sm"> {{$tp->niveau->name}} </td>
-                  <td class="px-4 py-3 text-sm">
+                  <td class="px-4 py-3 text-sm text-center">
                      <a href=""
                         class="px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring">Validé</a>
                   </td>

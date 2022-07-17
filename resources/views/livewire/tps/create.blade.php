@@ -9,7 +9,6 @@
                   <table>
                      <thead>
                         <th></th>
-
                      </thead>
                      <tbody>
                         <tr>
@@ -55,6 +54,15 @@
                                  @endforeach
 
                               </select>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <div class="px-4 py-2 font-semibold">Enoncé</div>
+                           </td>
+                           <td class="my-2">
+                              <textarea class="w-full rounded-lg font-semibold px-4 py-2" cols="15"
+                                 wire:model="body"> </textarea>
                            </td>
                         </tr>
                         <tr>

@@ -10,7 +10,7 @@ use App\Models\Niveau ;
 
 class Create extends Component
 {
-   public  $name ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
+   public  $name,$body ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
 
 //    protected $rules = [
 //       'name' => 'required|string|max:255',
@@ -30,6 +30,7 @@ class Create extends Component
 
       $tp = Traveau::create([
          'name' => $this->name,
+         'body' => $this->body,
          'numero_partie' => $this->numero_partie,
          'user_id' => auth()->user()->id,
          'matiere_id' => $this->matiere_id,
