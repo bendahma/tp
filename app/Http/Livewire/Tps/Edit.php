@@ -4,10 +4,13 @@ namespace App\Http\Livewire\Tps;
 
 use Livewire\Component;
 
+use App\Models\Matiere ;
+use App\Models\Niveau ;
+
 class Edit extends Component
 {
    public $tpCompnent ;
-   public  $name ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
+   public $name ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
 
    protected $rules = [
       'name' => 'required|string|max:255',
@@ -19,8 +22,13 @@ class Edit extends Component
 
 
    public function mount($tp) {
+
       $this->tpCompnent = $tp ;
       $this->name = $this->tpCompnent->name ;
+      $this->numero_partie =  $this->tpCompnent->numero_partie ;
+      $this->matiere_id =  $this->tpCompnent->matiere_id ;
+      $this->niveau_id =  $this->tpCompnent->niveau_id ;
+     
    }
 
    public function updateTP(){
@@ -38,6 +46,8 @@ class Edit extends Component
    }
     public function render()
     {
-        return view('livewire.tp.edit');
+      $matieres = Matiere::all();
+      $niveaux = Niveau::all() ;
+      return view('livewire.tps.edit', compact(['matieres','niveaux']));
     }
 }

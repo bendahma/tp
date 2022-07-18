@@ -66,6 +66,14 @@
                            </td>
                         </tr>
                         <tr>
+                           <td>
+                              <div class="px-4 py-2 font-semibold">Image</div>
+                           </td>
+                           <td class="my-2">
+                              <input type="file" name="" id="" class="">
+                           </td>
+                        </tr>
+                        <tr>
                            <td></td>
                            <td class="flex justify-end mt-4">
                               <x-button type="submit" class="flex mr-0">Suivant -> </x-button>
