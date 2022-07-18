@@ -21,14 +21,14 @@ class TPController extends Controller
         return view('admin.tp.create')->with('tp',$tp);
    }
    
-   public function destroy(Tp $tp)
+   public function destroy(Traveau $tp)
    {
        $tp->delete() ;
        toast('TP supprime avec success','success') ;
        return redirect()->back();
    }
 
-    public function validation(TP $tP)
+    public function validation(Traveau $tP)
     {
         $tp->update(['validated'=>true]) ;
         toast('TP validé avec success','success') ;

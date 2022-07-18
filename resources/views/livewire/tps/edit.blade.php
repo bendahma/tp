@@ -82,8 +82,11 @@
                            </td>
                            <td class="flex justify-end mt-4">
 
-                              <x-button type="submit" class="flex mr-0 bg-red-400 active:bg-red-400">Les question ->
-                              </x-button>
+                              <a href="{{route('question.addQuestion',$tpCompnent->id)}}" class="px-4 py-2 text-sm font-medium leading-5 text-center
+                              text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600
+                              hover:bg-red-700 focus:outline-none focus:ring">Les question <i
+                                    class="fas fa-angle-double-right"></i>
+                              </a>
                            </td>
                         </tr>
                      </tbody>

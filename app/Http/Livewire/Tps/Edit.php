@@ -35,13 +35,10 @@ class Edit extends Component
       $this->tpCompnent->update([
          'name' => $this->name,
          'numero_partie' => $this->numero_partie,
-         'user_id' => $this->user_id,
+         'user_id' => auth()->user()->id,
          'matiere_id' => $this->matiere_id,
          'niveau_id' => $this->niveau_id,
       ]);
-
-      toast('TP mettre à jours avec success','success');
-
       return redirect()->route('tp.index');
    }
     public function render()

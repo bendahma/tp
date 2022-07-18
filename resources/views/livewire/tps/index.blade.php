@@ -56,15 +56,17 @@
                   <td class="px-4 py-3 text-sm">
                      <div class="flex justify-evenly items-center ">
                         <div class="flex justiy-evenly gap-x-2">
-                           <a href="{{route('tp.edit',$tp->id)}}"> <i class="fas fa-edit text-blue-600 text-lg"></i>
-                           </a>
-                           <form method="post" action="{{route('tp.destroy',$tp->id)}}" class="">
-                              @csrf
-                              @method('DELETE')
-                              <button type="submit">
-                                 <i class="fas fa-trash text-red-600 text-lg"></i>
-                              </button>
-                           </form>
+                           <a href="{{route('question.addQuestion',$tp->id)}}"> <i
+                                 class="fas fa-question text-green-400 text-lg"></i>
+                              <a href="{{route('tp.edit',$tp->id)}}"> <i class="fas fa-edit text-blue-600 text-lg"></i>
+                              </a>
+                              <form method="post" action="{{route('tp.destroy',$tp->id)}}" class="">
+                                 @csrf
+                                 @method('DELETE')
+                                 <button type="submit">
+                                    <i class="fas fa-trash text-red-600 text-lg"></i>
+                                 </button>
+                              </form>
 
                         </div>
                      </div>

@@ -76,7 +76,9 @@
                         <tr>
                            <td></td>
                            <td class="flex justify-end mt-4">
-                              <x-button type="submit" class="flex mr-0">Suivant -> </x-button>
+                              <x-button type="submit" class="flex mr-0 items-center">
+                                 Suivant <i class="fas fa-angle-double-right mx-3"></i>
+                              </x-button>
                            </td>
                         </tr>
                      </tbody>

@@ -17,8 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('partie');
-            $table->string('image')->nullable();
-            $table->foreignId('traveau_id')->constrained();
+            $table->foreignId('traveau_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

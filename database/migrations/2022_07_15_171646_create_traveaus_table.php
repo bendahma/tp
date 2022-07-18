@@ -18,9 +18,10 @@ class CreateTraveausTable extends Migration
             $table->string('name');
             $table->text('body');
             $table->integer('numero_partie')->nullable();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('matiere_id')->constrained();
-            $table->foreignId('niveau_id')->constrained();
+            $table->string('image')->nullable();
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('matiere_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('niveau_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('validated')->default(false);
             $table->timestamps();
         });

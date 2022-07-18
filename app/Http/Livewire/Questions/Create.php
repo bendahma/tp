@@ -10,7 +10,7 @@ class Create extends Component
 {
 
    public $tp ;
-   public $name , $partie, $image, $traveau_id;
+   public $name , $partie, $traveau_id;
 
    public function mount($tp){
       $this->tp = $tp ;
@@ -21,7 +21,6 @@ class Create extends Component
 
          'name' => $this->name ,
          'partie' => $this->partie ,
-         'image' => $this->image ,
          'traveau_id' => $this->tp->id ,
       ]);
 
