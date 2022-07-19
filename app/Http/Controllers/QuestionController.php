@@ -49,7 +49,9 @@ class QuestionController extends Controller
     
     public function destroy(Question $question)
     {
-        //
+        $question->delete() ;
+        toast('Question supprimé avec success','success') ;
+        return redirect()->back() ;
     }
 
     public function addQuestion(Traveau $tp){

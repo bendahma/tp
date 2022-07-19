@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Spatie\Permission\Models\Permission;
+use PDF;
 
 use App\Models\Traveau;
+use App\Models\Question;
 
 class TPController extends Controller
 {
@@ -13,6 +16,7 @@ class TPController extends Controller
 
    public function create()
    {
+      $this->authorize('tp.create');
        return view('admin.tp.create');
    }
 
@@ -28,10 +32,24 @@ class TPController extends Controller
        return redirect()->back();
    }
 
-    public function validation(Traveau $tP)
+    public function validateTp(Traveau $tp)
     {
         $tp->update(['validated'=>true]) ;
         toast('TP validé avec success','success') ;
         return redirect()->back();
+    }
+
+    public function download($id){
+      set_time_limit(300);
+      $tp = Traveau::where('id',$id)->with(['matiere','niveau'])->first();
+      $questions = Question::where('traveau_id',$tp->id)->get()->groupBy('partie') ;
+      
+      $image = 'storage/' . $tp->image ;
+      $imageData = base64_encode(file_get_contents($image));
+      $src = 'data:'.mime_content_type($image).';base64,'.$imageData;
+      
+      $pdf = PDF::loadView('pdf', compact(['tp','questions','src']));
+      // $pdf = PDF::loadView('pdf');
+      return $pdf->download('tp.pdf');
     }
 }

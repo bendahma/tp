@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Tps;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use App\Models\Traveau ;
 use App\Models\Matiere ;
@@ -10,7 +12,9 @@ use App\Models\Niveau ;
 
 class Create extends Component
 {
-   public  $name,$body ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id , $image_show ;
+   use WithFileUploads, AuthorizesRequests;
+
+   public  $name,$body ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ,$image ,$image_show = null ;
 
 //    protected $rules = [
 //       'name' => 'required|string|max:255',
@@ -24,6 +28,16 @@ class Create extends Component
      
   }
 
+  public function updatedImage(){
+      
+   $this->validate([
+      'image' => 'image|max:2048', // 2MB Max
+   ]);
+
+   $this->image_show = $this->image->store('tp','public');
+   
+}
+
    public function saveNewTP(){
 
 
@@ -32,6 +46,7 @@ class Create extends Component
       $tp = Traveau::create([
          'name' => $this->name,
          'body' => $this->body,
+         'image' => $this->image_show ,
          'numero_partie' => $this->numero_partie,
          'user_id' => auth()->user()->id,
          'matiere_id' => $this->matiere_id,

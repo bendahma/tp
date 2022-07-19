@@ -17,9 +17,14 @@ class PermissionsSeeder extends Seeder
         // Users Permissions
         Permission::create(['name'=>'users.*']);
         Permission::create(['name'=>'users.list']);
-        Permission::create(['name'=>'tps.*']);
-        Permission::create(['name'=>'tps.list']);
-        Permission::create(['name'=>'tps.validate']);
+
+        Permission::create(['name'=>'tp.*']);
+        Permission::create(['name'=>'tp.list']);
+        Permission::create(['name'=>'validate-tp']);
+
+        Permission::create(['name'=>'cours.*']);
+        Permission::create(['name'=>'cours.list']);
+        Permission::create(['name'=>'validate-cours']);
 
     }
 }

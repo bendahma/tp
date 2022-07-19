@@ -2,7 +2,7 @@
 
    <div class="flex justify-between items-center w-full">
       <div class="flex gap-x-3">
-
+         @can('tp.create')
          <div class="">
             <a data-tooltip-target="tooltip-default" href="{{route('tp.create')}}"
                class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800">
@@ -14,6 +14,8 @@
                <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
          </div>
+         @endcan
+
       </div>
       <div class=" w-1/4 flex-wrap items-stretch">
          <input type="text" class="justify-end my-1 py-2 w-full rounded-lg bg-gray-50 text-sm font-semibold "
@@ -32,7 +34,8 @@
                   <th class="px-4 py-3">Publie par</th>
                   <th class="px-4 py-3">Matière</th>
                   <th class="px-4 py-3">Niveau</th>
-                  <th class="px-4 py-3 text-center">Validé</th>
+                  <th class="px-4 py-3 text-center"></th>
+                  <th class="px-4 py-3 text-center"></th>
                   <th class="px-4 py-3"></th>
 
                </tr>
@@ -40,7 +43,7 @@
             <tbody class="bg-white divide-y">
 
                @forelse($tps as $tp)
-               <tr class="text-gray-700">
+               <tr class="{{$tp->validated == 0 ? 'bg-red-400 text-white font-semibold' : ''}}">
                   <td class="px-4 py-3 text-sm">
                      {{ $loop->iteration }}
                   </td>
@@ -48,9 +51,21 @@
                   <td class="px-4 py-3 text-sm"> {{$tp->user->name}} </td>
                   <td class="px-4 py-3 text-sm"> {{$tp->matiere->name}} </td>
                   <td class="px-4 py-3 text-sm"> {{$tp->niveau->name}} </td>
-                  <td class="px-4 py-3 text-sm text-center">
-                     <a href=""
-                        class="px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring">Validé</a>
+                  <td class="py-3 text-sm text-center">
+                     @can('validate-tp')
+                     @if ($tp->validated == false)
+                     <form action="{{ route('tp.validateTp', $tp->id) }}" method="POST">
+                        @csrf
+                        <button type="submit"
+                           class="px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring">Validé
+                           TP</button>
+                     </form>
+                     @endif
+                     @endcan
+                  </td>
+                  <td class="py-3 text-sm text-center">
+                     <a class="px-4 py-2 text-sm font-medium leading-5 text-center text-white bg-red-600 border border-transparent rounded-lg  hover:bg-red-700 focus:outline-none focus:ring mx-3"
+                        href="{{route('tp.download',$tp->id)}}">Télécharger TP</a>
                   </td>
 
                   <td class="px-4 py-3 text-sm">

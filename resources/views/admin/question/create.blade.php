@@ -11,7 +11,7 @@
       <span class="text-base font-bold mx-1">/</span>
       <a href="{{route('matieres.create')}}"
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">
-         @if(!isset($matiere)) Ajoutéé question @else Mettre à jours @endif
+         @if(!isset($matiere)) Ajouté question @else Mettre à jours @endif
       </a>
 
    </x-slot>

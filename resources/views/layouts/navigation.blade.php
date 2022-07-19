@@ -31,7 +31,7 @@
             Enseignement
          </div>
          <li class="relative px-6 py-1">
-            <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+            <x-nav-link href="{{ route('cours.index') }}" :active="request()->routeIs('cours.index')">
                <x-slot name="icon">
                   <i class="fas fa-book text-xl"></i>
                </x-slot>

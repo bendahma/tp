@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traveau ;
+use App\Models\Cours ;
 
 class Matiere extends Model
 {
@@ -14,6 +15,9 @@ class Matiere extends Model
 
     public function traveaux(){
       return $this->hasMany(Traveau::class) ;
+   }
+    public function cours(){
+      return $this->hasMany(Cours::class) ;
    }
 
     public static function search($search){

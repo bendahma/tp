@@ -4,20 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Traveau ;
-use App\Models\Cours ;
 
-class Niveau extends Model
+use App\Models\Matiere ;
+use App\Models\Niveau ;
+
+class Cours extends Model
 {
     use HasFactory;
 
     protected $guarded = [] ;
 
-    public function traveaux(){
-      return $this->hasMany(Traveau::class) ;
+    public function matiere(){
+      return $this->belongsTo(Matiere::class) ;
    }
-    public function cours(){
-      return $this->hasMany(Traveau::class) ;
+
+    public function niveau(){
+      return $this->belongsTo(Niveau::class) ;
    }
 
     public static function search($search){
