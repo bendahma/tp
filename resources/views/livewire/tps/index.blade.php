@@ -10,7 +10,7 @@
             </a>
             <div id="tooltip-default" role="tooltip"
                class="z-50 inline-block absolute invisible py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
-               Nouveau Traveau Pratique
+               Nouvelle Traveaux Pratique
                <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
          </div>
@@ -31,9 +31,12 @@
                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                   <th class="px-4 py-3">N°</th>
                   <th class="px-4 py-3">Nom TP</th>
+                  @role('Super Admin')
                   <th class="px-4 py-3">Publie par</th>
-                  <th class="px-4 py-3">Matière</th>
+                  @endrole
                   <th class="px-4 py-3">Niveau</th>
+                  <th class="px-4 py-3">Matière</th>
+                  <th class="px-4 py-3">Cours</th>
                   <th class="px-4 py-3 text-center"></th>
                   <th class="px-4 py-3 text-center"></th>
                   <th class="px-4 py-3"></th>
@@ -48,9 +51,12 @@
                      {{ $loop->iteration }}
                   </td>
                   <td class="px-4 py-3 text-sm"> {{$tp->name}} </td>
+                  @role('Super Admin')
                   <td class="px-4 py-3 text-sm"> {{$tp->user->name}} </td>
-                  <td class="px-4 py-3 text-sm"> {{$tp->matiere->name}} </td>
+                  @endrole
                   <td class="px-4 py-3 text-sm"> {{$tp->niveau->name}} </td>
+                  <td class="px-4 py-3 text-sm"> {{$tp->matiere->name}} </td>
+                  <td class="px-4 py-3 text-sm"> {{$tp->cour->name}} </td>
                   <td class="py-3 text-sm text-center">
                      @can('validate-tp')
                      @if ($tp->validated == false)

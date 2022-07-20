@@ -8,7 +8,7 @@
       <span class="text-base font-bold mx-1">/</span>
       <a href="{{route('annee.create')}}"
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">
-         @if(!isset($annee)) Nouveau @else Mettre à jours @endif
+         @if(!isset($annee)) Nouvelle @else Mise à jours @endif
       </a>
 
    </x-slot>

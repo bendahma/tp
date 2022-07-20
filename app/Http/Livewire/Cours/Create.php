@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Cours;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use App\Models\Cours ;
 use App\Models\Matiere ;
@@ -10,18 +12,17 @@ use App\Models\Niveau ;
 
 class Create extends Component
 {
-   public  $name , $matiere_id ,$niveau_id ;
+   use WithFileUploads, AuthorizesRequests;
 
-   protected $rules = [
-      'name' => 'required|string|max:255',
-  ];
+   public  $name , $matiere_id ,$niveau_id, $fileSave ,$f;
 
    public function saveNewCours(){
 
-      $this->validate();
+      $this->f = $this->fileSave-store('cours','public') ;
 
       $cours = Cours::create([
          'name' => $this->name,
+         'file' => $this->f ,
          'matiere_id' => $this->matiere_id ,
          'niveau_id' => $this->niveau_id ,
          'user_id' => auth()->user()->id,

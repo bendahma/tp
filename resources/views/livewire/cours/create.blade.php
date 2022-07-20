@@ -52,13 +52,13 @@
                               <div class="px-4 py-2 font-semibold">Fichier du cours</div>
                            </td>
                            <td class="py-1"><input type="file" class="w-full rounded-lg font-semibold px-4 py-2"
-                                 wire:model="file">
+                                 wire:model="fileSave">
                            </td>
                         </tr>
                         <tr>
                            <td> </td>
                            <td>
-                              <x-button type="submit" class="">Enregistre</x-button>
+                              <x-button type="submit" class="">Enregistrer</x-button>
                            </td>
                         </tr>
                      </tbody>

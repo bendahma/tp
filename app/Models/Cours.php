@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Matiere ;
 use App\Models\Niveau ;
+use App\Models\Traveau ;
+use App\Models\User ;
 
 class Cours extends Model
 {
@@ -18,8 +20,16 @@ class Cours extends Model
       return $this->belongsTo(Matiere::class) ;
    }
 
+    public function traveaus(){
+      return $this->hasMany(Matiere::class) ;
+   }
+
     public function niveau(){
       return $this->belongsTo(Niveau::class) ;
+   }
+
+    public function user(){
+      return $this->belongsTo(User::class) ;
    }
 
     public static function search($search){

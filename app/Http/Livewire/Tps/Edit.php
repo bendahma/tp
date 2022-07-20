@@ -11,7 +11,8 @@ class Edit extends Component
 {
    public $tpCompnent ;
    public $name ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
-
+   public $cours ,$cour_id ;
+   public $image ,$image_show ;
    protected $rules = [
       'name' => 'required|string|max:255',
       'numero_partie' => 'required|integer|max:10',
@@ -28,6 +29,7 @@ class Edit extends Component
       $this->numero_partie =  $this->tpCompnent->numero_partie ;
       $this->matiere_id =  $this->tpCompnent->matiere_id ;
       $this->niveau_id =  $this->tpCompnent->niveau_id ;
+      $this->image_show = !is_null($this->tpCompnent->name ) ? true : false ;
      
    }
 

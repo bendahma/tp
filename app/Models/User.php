@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 use App\Models\Traveau ;
+use App\Models\Cours ;
 
 class User extends Authenticatable
 {
@@ -24,6 +25,10 @@ class User extends Authenticatable
 
    public function traveaux(){
       return $this->hasMany(Traveau::class) ;
+   }
+
+   public function cours(){
+      return $this->hasMany(Cours::class) ;
    }
 
 

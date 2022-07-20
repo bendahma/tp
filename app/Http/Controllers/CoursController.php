@@ -19,14 +19,14 @@ class CoursController extends Controller
        return view('admin.cours.create');
    }
 
-   public function edit(Cours $cours)
+   public function edit(Cours $cour)
    {
-        return view('admin.cours.create')->with('cours',$cours);
+        return view('admin.cours.create')->with('cours',$cour);
    }
    
-   public function destroy(Cours $cours)
+   public function destroy(Cours $cour)
    {
-       $cours->delete() ;
+       $cour->delete() ;
        toast('Le cours à été supprime avec success','success') ;
        return redirect()->back();
    }

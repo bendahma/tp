@@ -51,7 +51,7 @@
                               <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matiere_id">
                                  <option selected> Matière </option>
                                  @foreach ($matieres as $matiere)
-                                 <option value="{{$matiere->id}}" {{ $matiere->id == $matiere_id ? 'selected' : '' }}>
+                                 <option value="{{$matiere->id}}" {{ $matiere_id==$matiere->id ? 'selected' : '' }}>
                                     {{$matiere->name}}
                                  </option>
                                  @endforeach

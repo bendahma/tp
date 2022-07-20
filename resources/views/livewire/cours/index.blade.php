@@ -28,19 +28,22 @@
          <table class="w-full">
             <thead>
                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
-                  <th class="px-4 py-3">N°</th>
-                  <th class="px-4 py-3">Nom cours</th>
-                  <th class="px-4 py-3">Matière</th>
-                  <th class="px-4 py-3">Année</th>
-                  <th class="px-4 py-3">Fichier</th>
-                  <th class="px-4 py-3"></th>
+                  <th class="px-4 py-3 text-center">N°</th>
+                  <th class="px-4 py-3 text-center">Nom cours</th>
+                  <th class="px-4 py-3 text-center">Matière</th>
+                  <th class="px-4 py-3 text-center">Année</th>
+                  @role('Super Admin')
+                  <th class="px-4 py-3 text-center">Publié par</th>
+                  @endrole
+                  <th class="px-4 py-3 text-center">Fichier</th>
+                  <th class="px-4 py-3 text-center">Validé</th>
 
                </tr>
             </thead>
             <tbody class="bg-white divide-y">
 
                @forelse($cours as $c)
-               <tr class="text-gray-700">
+               <tr class="{{$c->validated == 0 ? 'bg-red-500 text-white font-semibold' : ''}}">
                   <td class="px-4 py-3 text-sm">
                      {{ $loop->iteration }}
                   </td>
@@ -53,9 +56,23 @@
                   <td class="px-4 py-3 text-sm">
                      {{$c->niveau->name}}
                   </td>
-                  <td class="px-4 py-3 text-sm">
-
+                  @role('Super Admin')
+                  <td> {{$c->user->name}} </td>
+                  @endrole
+                  <td class="py-3 text-sm text-center">
+                     <a class="px-4 py-2 text-sm font-medium leading-5 text-center text-white bg-green-600 border border-transparent rounded-lg  hover:bg-red-700 focus:outline-none focus:ring mx-3"
+                        href="">Télécharger</a>
                   </td>
+                  <td class="py-3 text-sm text-center">
+                     @can('validate-cours')
+                     @if ($c->validated == false)
+                     <form action="{{ route('cours.validateCours', $c->id) }}" method="POST">
+                        @csrf
+                        <button type="submit"
+                           class="px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring">Validé</button>
+                     </form>
+                     @endif
+                     @endcan
                   <td class="px-4 py-3 text-sm">
                      <div class="flex justify-evenly items-center ">
                         <div class="flex justiy-evenly gap-x-2">

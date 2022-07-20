@@ -47,7 +47,7 @@
                               <div class="px-4 py-2 font-semibold">Matiere</div>
                            </td>
                            <td class="my-2">
-                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matiere_id">
+                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matier">
                                  <option selected> Matière </option>
                                  @foreach ($matieres as $matiere)
                                  <option value="{{$matiere->id}}"> {{$matiere->name}} </option>
@@ -55,7 +55,27 @@
 
                               </select>
                            </td>
+
                         </tr>
+                        @if (!is_null($matier))
+                        <tr>
+                           <td>
+                              <div class="px-4 py-2 font-semibold">Cours</div>
+                           </td>
+
+                           <td class="my-2">
+                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="cour_id">
+                                 <option selected> Cours </option>
+                                 @foreach ($cours as $cour)
+                                 <option value="{{$cour->id}}"> {{$cour->name}} </option>
+                                 @endforeach
+
+                              </select>
+                           </td>
+
+                        </tr>
+                        @endif
+
                         <tr>
                            <td>
                               <div class="px-4 py-2 font-semibold">Enoncé</div>

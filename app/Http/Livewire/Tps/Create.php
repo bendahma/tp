@@ -9,23 +9,21 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Traveau ;
 use App\Models\Matiere ;
 use App\Models\Niveau ;
+use App\Models\Cours ;
 
 class Create extends Component
 {
    use WithFileUploads, AuthorizesRequests;
 
-   public  $name,$body ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ,$image ,$image_show = null ;
-
-//    protected $rules = [
-//       'name' => 'required|string|max:255',
-//       'numero_partie' => 'required|integer|max:10',
-//       'user_id' => 'required|integer',
-//       'matiere_id' => 'required|integer',
-//       'niveau_id' => 'required|integer',
-//   ];
+   public  $name,$body ,$numero_partie ,$user_id ,$matier ,$niveau_id ,$image ,$image_show = null ;
+   public $cours ,$cour_id ;
 
   public function mount(){
      
+  }
+
+  public function updatedMatier(){
+     $this->cours = Cours::where('niveau_id',$this->niveau_id)->where('matiere_id',$this->matier)->get();
   }
 
   public function updatedImage(){
@@ -35,8 +33,8 @@ class Create extends Component
    ]);
 
    $this->image_show = $this->image->store('tp','public');
-   
-}
+
+   }
 
    public function saveNewTP(){
 
@@ -49,8 +47,9 @@ class Create extends Component
          'image' => $this->image_show ,
          'numero_partie' => $this->numero_partie,
          'user_id' => auth()->user()->id,
-         'matiere_id' => $this->matiere_id,
+         'matiere_id' => $this->matier,
          'niveau_id' => $this->niveau_id,
+         'cour_id' => $this->cour_id,
       ]);
 
       return redirect()->route('question.addQuestion',compact('tp'));

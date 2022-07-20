@@ -26,29 +26,6 @@
             </x-nav-link>
          </li>
 
-         @role('Enseignant')
-         <div class="uppercase text-2xs font-bold py-1 px-2">
-            Enseignement
-         </div>
-         <li class="relative px-6 py-1">
-            <x-nav-link href="{{ route('cours.index') }}" :active="request()->routeIs('cours.index')">
-               <x-slot name="icon">
-                  <i class="fas fa-book text-xl"></i>
-               </x-slot>
-               Les cours
-            </x-nav-link>
-         </li>
-         <li class="relative px-6 py-1">
-            <x-nav-link href="{{ route('tp.index') }}" :active="request()->routeIs('tp.index')">
-               <x-slot name="icon">
-                  <i class="fas fa-microscope text-xl"></i>
-               </x-slot>
-               Travaux pratiques
-            </x-nav-link>
-         </li>
-         @endrole
-
-         @role('Super Admin')
          <div class="uppercase text-2xs font-bold py-3 px-2">
             Education
          </div>
@@ -57,23 +34,24 @@
                <x-slot name="icon">
                   <i class="fas fa-microscope text-xl"></i>
                </x-slot>
-               Traveau Pratique
+               Traveaux Pratique
             </x-nav-link>
          </li>
+         <li class="relative px-6 py-1">
+            <x-nav-link href="{{ route('cours.index') }}" :active="request()->routeIs('cours.index')">
+               <x-slot name="icon">
+                  <i class="fas fa-book text-xl"></i>
+               </x-slot>
+               Les cours
+            </x-nav-link>
+         </li>
+         @role('Super Admin')
          <li class="relative px-6 py-1">
             <x-nav-link href="{{ route('matieres.index') }}" :active="request()->routeIs('matieres.index')">
                <x-slot name="icon">
                   <i class="fas fa-book-open text-xl"></i>
                </x-slot>
                Matière
-            </x-nav-link>
-         </li>
-         <li class="relative px-6 py-1">
-            <x-nav-link href="{{ route('annee.index') }}" :active="request()->routeIs('annee.index')">
-               <x-slot name="icon">
-                  <i class="fas fa-calendar-day text-xl"></i>
-               </x-slot>
-               Année scolaire
             </x-nav-link>
          </li>
          <li class="relative px-6 py-1">
@@ -84,7 +62,14 @@
                Niveau scolaire
             </x-nav-link>
          </li>
-
+         <li class="relative px-6 py-1">
+            <x-nav-link href="{{ route('annee.index') }}" :active="request()->routeIs('annee.index')">
+               <x-slot name="icon">
+                  <i class="fas fa-calendar-day text-xl"></i>
+               </x-slot>
+               Année scolaire
+            </x-nav-link>
+         </li>
          <div class="uppercase text-2xs font-bold py-3 px-2">
             Users
          </div>

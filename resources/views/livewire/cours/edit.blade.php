@@ -27,7 +27,7 @@
                            <td class="pt-2">
                               <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matiere_id">
                                  @foreach ($matieres as $matiere)
-                                 <option value="{{$matiere->id}}" {{ $m==$matiere->id ?? 'selected' }}>
+                                 <option value="{{$matiere->id}}" {{ $matiere->id == $m ? 'selected' : '' }}>
                                     {{$matiere->name}} </option>
                                  @endforeach
                               </select>
@@ -40,7 +40,8 @@
                            <td class="pt-2">
                               <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id">
                                  @foreach ($niveaux as $niveau)
-                                 <option value="{{$niveau->id}}" {{ $n==$niveau->id ?? 'selected' }}> {{$niveau->name}}
+                                 <option value="{{$niveau->id}}" {{ $niveau->id == $n ? 'selected' : ''}}>
+                                    {{$niveau->name}}
                                  </option>
                                  @endforeach
                               </select>

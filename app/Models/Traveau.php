@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Matiere;
 use App\Models\Niveau;
+use App\Models\Cours;
 
 class Traveau extends Model
 {
@@ -25,6 +26,10 @@ class Traveau extends Model
     
     public function niveau(){
        return $this->belongsTo(Niveau::class) ;
+    }
+
+    public function cour(){
+       return $this->belongsTo(Cours::class) ;
     }
 
     public static function search($search){

@@ -14,7 +14,7 @@
                            @error('name') <span class="text-red-700 font-bold text-sm my-1">{{ $message }}</span>
                            @enderror
                         </div>
-                        <x-button type="submit" class="">Enregistre</x-button>
+                        <x-button type="submit" class="">Enregistrer</x-button>
                      </div>
                   </div>
                </div>

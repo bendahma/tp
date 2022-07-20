@@ -15,10 +15,10 @@ class Edit extends Component
    public function mount($cours) {
 
       $this->coursCompnent = $cours ;
-
       $this->name = $this->coursCompnent->name ;
       $this->n = $this->coursCompnent->niveau_id ;
       $this->m = $this->coursCompnent->matiere_id ;
+     
    }
 
    public function updateCours(){
