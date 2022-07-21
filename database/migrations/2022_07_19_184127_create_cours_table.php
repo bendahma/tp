@@ -16,6 +16,7 @@ class CreateCoursTable extends Migration
         Schema::create('cours', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('resume');
             $table->string('file');
             $table->boolean('validated')->default(false) ;
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');

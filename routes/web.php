@@ -11,16 +11,23 @@ use App\Http\Controllers\NiveauController;
 use App\Http\Controllers\TPController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\CoursController;
+use App\Http\Controllers\FrontController;
 
 Route::get('lang/{locale}', LocalizationController::class)->name('lang');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
 
-Route::view('about', 'about')->name('about');
+Route::get('/', [FrontController::class,'index'])->name('welcome');
+Route::get('/matiere',[FrontController::class,'matiere'])->name('matiere');
+Route::get('/traveaux_pratiques',[FrontController::class,'traveaux_pratqiues'])->name('traveaux_pratqiues');
+Route::get('/matiere/{matiere}/annee',[FrontController::class,'annee'])->name('annee');
+Route::get('/matiere/{matiere}/annee/{niveau}/cours',[FrontController::class,'cours'])->name('cours');
+Route::get('/about',[FrontController::class,'about'])->name('about');
+Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/cours/{cour}/download',[FrontController::class,'downloadCours'])->name('downloadCours');
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
     Route::resource('users', UserController::class);

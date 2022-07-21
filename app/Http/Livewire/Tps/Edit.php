@@ -13,13 +13,14 @@ class Edit extends Component
    public $name ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
    public $cours ,$cour_id ;
    public $image ,$image_show ;
-   protected $rules = [
-      'name' => 'required|string|max:255',
-      'numero_partie' => 'required|integer|max:10',
-      'user_id' => 'required|integer',
-      'matiere_id' => 'required|integer',
-      'niveau_id' => 'required|integer',
-  ];
+   
+//    protected $rules = [
+//       'name' => 'required|string|max:255',
+//       'numero_partie' => 'required|integer|max:10',
+//       'user_id' => 'required|integer',
+//       'matiere_id' => 'required|integer',
+//       'niveau_id' => 'required|integer',
+//   ];
 
 
    public function mount($tp) {
