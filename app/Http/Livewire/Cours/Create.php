@@ -14,14 +14,15 @@ class Create extends Component
 {
    use WithFileUploads, AuthorizesRequests;
 
-   public  $name , $matiere_id ,$niveau_id, $fileSave ,$f;
+   public  $name , $matiere_id ,$niveau_id, $fileSave ,$f, $resume;
 
    public function saveNewCours(){
-
-      $this->f = $this->fileSave-store('cours','public') ;
+      
+      $this->f = $this->fileSave->store('cours','public') ;
 
       $cours = Cours::create([
          'name' => $this->name,
+         'resume' => $this->resume,
          'file' => $this->f ,
          'matiere_id' => $this->matiere_id ,
          'niveau_id' => $this->niveau_id ,

@@ -1,23 +1,34 @@
 <div>
    <div class="md:flex w-full ">
-      <form wire:submit.prevent="saveNewCours" class="w-2/3 mx-auto">
+      <form wire:submit.prevent="saveNewCours" class="w-full mx-auto">
          @csrf
 
          <div class="w-full justify-center  mx-2 h-64">
             <div class="bg-white p-3 shadow-lg rounded-lg">
                <div class="text-gray-700 flex justify-center w-full">
 
-                  <table>
+                  <table class="w-full">
                      <thead></thead>
                      <tbody>
                         <tr>
-                           <td>
+                           <td class="">
                               <div class="px-4 py-2 font-semibold">Titre cours</div>
                            </td>
                            <td class="py-2">
 
                               <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name"
                                  placeholder="Exp: Loi des noeuds">
+
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <div class="px-4 py-2 font-semibold">Resumé cours</div>
+                           </td>
+                           <td class="py-2">
+
+                              <textarea type="text" class="w-full rounded-lg font-semibold px-4 py-2" cols="10" rows="6"
+                                 wire:model="resume" placeholder=""></textarea>
 
                            </td>
                         </tr>
@@ -40,7 +51,7 @@
                            </td>
                            <td class="pt-2">
                               <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id">
-                                 <option selected> Choisi un matière </option>
+                                 <option selected> Choisi année scholaire </option>
                                  @foreach ($niveaux as $niveau)
                                  <option value="{{$niveau->id}}"> {{$niveau->name}} </option>
                                  @endforeach
