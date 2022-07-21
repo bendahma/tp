@@ -1,6 +1,6 @@
 <div>
    <div class="md:flex w-full ">
-      <form wire:submit.prevent="updateTP" class="w-2/3 mx-auto">
+      <form wire:submit.prevent="updateTP" class="w-full mx-auto">
          @csrf
          <div class="w-full justify-center  mx-2 h-64">
             <div class="bg-white p-3 shadow-lg rounded-lg">
@@ -12,7 +12,7 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td>
+                           <td class="w-1/3">
                               <div class="px-4 py-2 font-semibold">Titre TP</div>
                            </td>
                            <td>
@@ -70,10 +70,27 @@
                         </tr>
                         <tr>
                            <td>
-                              <div class="px-4 py-2 font-semibold">Image </div>
+                              <div class="px-4 py-2 font-semibold">Image</div>
                            </td>
                            <td class="my-2">
-                              <img src="" alt="">
+                              <div>
+                                 <div class="py-3 center mx-auto">
+                                    <div class="bg-transparent px-4 py-5 rounded-lg text-center ">
+                                       <div class="mb-4">
+                                          <img class="mx-auto rounded-lg "
+                                             src="{{$image_check == false ? asset('images/1.jpg') : asset('storage/'.$image_show)}} "
+                                             alt="TP image" />
+                                       </div>
+                                       <label class="cursor-pointer ">
+                                          <span
+                                             class="mt-2 leading-normal px-4 py-2 font-semibold bg-purple-600 text-white text-sm rounded-full">
+                                             Upload image
+                                          </span>
+                                          <input type='file' class="hidden" wire:model="image" />
+                                       </label>
+                                    </div>
+                                 </div>
+                              </div>
                            </td>
                         </tr>
                         <tr class="">

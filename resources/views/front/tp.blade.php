@@ -28,7 +28,8 @@
                   <img class="card-img-top" src="storage/{{$tp->image}}" alt="Card image cap">
 
                   <div class="card-body">
-                     <h5 class="card-title"> {{$tp->name}} </h5>
+                     <h5 class="card-title" style="text-align: center; font-weight:bolder; font-size:1.5rem">
+                        {{$tp->name}} </h5>
                      <br>
                      <table>
                         <thead>
@@ -57,8 +58,8 @@
                            </tr>
                         </tbody>
                      </table>
-
-                     <p class="card-text font-weight-bold"> {{ $tp->body}} </p>
+                     <br>
+                     <p class="card-text font-weight-bold"> {{ substr($tp->body, 0,100) . '...'}} </p>
                      <div class="d-flex">
                         <a href="{{route('tp.download',$tp->id)}}" class="btn head-btn1">Télécharger TP</a>
                         <a href="" class="btn  btn-info">Simulation</a>

@@ -3,35 +3,48 @@
 namespace App\Http\Livewire\Tps;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 use App\Models\Matiere ;
 use App\Models\Niveau ;
 
 class Edit extends Component
 {
-   public $tpCompnent ;
-   public $name ,$numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
-   public $cours ,$cour_id ;
-   public $image ,$image_show ;
-   
-//    protected $rules = [
-//       'name' => 'required|string|max:255',
-//       'numero_partie' => 'required|integer|max:10',
-//       'user_id' => 'required|integer',
-//       'matiere_id' => 'required|integer',
-//       'niveau_id' => 'required|integer',
-//   ];
+   use WithFileUploads ;
 
+   public $tpCompnent ;
+   public $name , $body, $numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
+   public $cours ,$cour_id ;
+   public $image ,$image_show , $image_check;
+
+   protected $listeners = ['render'=>'render'];
 
    public function mount($tp) {
 
       $this->tpCompnent = $tp ;
       $this->name = $this->tpCompnent->name ;
+      $this->body = $this->tpCompnent->body ;
       $this->numero_partie =  $this->tpCompnent->numero_partie ;
       $this->matiere_id =  $this->tpCompnent->matiere_id ;
       $this->niveau_id =  $this->tpCompnent->niveau_id ;
-      $this->image_show = !is_null($this->tpCompnent->name ) ? true : false ;
+      $this->image_check = !is_null($this->tpCompnent->image ) ? true : false ;
+      $this->image_show = $this->tpCompnent->image ;
      
+   }
+
+   public function updatedImage(){
+      
+      $this->validate([
+         'image' => 'image|max:2048', // 2MB Max
+      ]);
+   
+      $this->image_show = $this->image->store('tp','public');
+   
+      $this->tpCompnent->update([
+         'image' => $this->image_show ,
+      ]);
+
+      $this->emit('render') ;
    }
 
    public function updateTP(){
