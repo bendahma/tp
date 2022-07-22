@@ -11,7 +11,7 @@ class TPController extends Controller
 {
    public function index()
    {
-      $this->authorize('tp.index');
+      $this->authorize('tp.list');
        return view('admin.tp.index');
    }
 
