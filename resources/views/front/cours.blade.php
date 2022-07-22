@@ -22,6 +22,7 @@
 
 
          @forelse ($cours as $cour)
+         @if ($cour->validated)
          <div class="col-xl-4 col-lg-9 col-md-8" style="margin: 16px 0 ">
 
             <section class="featured-job-area">
@@ -34,6 +35,8 @@
                </div>
             </section>
          </div>
+         @endif
+
          @empty
          <div class="" style=" ">
 

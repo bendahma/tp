@@ -10,42 +10,6 @@ use App\Models\Traveau ;
 
 class QuestionController extends Controller
 {
-   
-    public function index()
-    {
-        //
-    }
-
-    
-    public function create()
-    {
-       //
-    }
-
-    
-    public function store(StoreQuestionRequest $request)
-    {
-        //
-    }
-
-    
-    public function show(Question $question)
-    {
-        //
-    }
-
-    
-    public function edit(Question $question)
-    {
-        //
-    }
-
-   
-    public function update(UpdateQuestionRequest $request, Question $question)
-    {
-        //
-    }
-
     
     public function destroy(Question $question)
     {
@@ -56,7 +20,7 @@ class QuestionController extends Controller
 
     public function addQuestion(Traveau $tp){
 
-        $this->authorize('question.create');
+      $this->authorize('question.create');
 
       return view('admin.question.create',compact('tp')) ;
 

@@ -11,6 +11,7 @@ class TPController extends Controller
 {
    public function index()
    {
+      $this->authorize('tp.index');
        return view('admin.tp.index');
    }
 
@@ -22,6 +23,7 @@ class TPController extends Controller
 
    public function edit(Traveau $tp)
    {
+      $this->authorize('tp.edit');
         return view('admin.tp.create')->with('tp',$tp);
    }
 

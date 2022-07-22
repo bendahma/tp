@@ -46,66 +46,6 @@
 </div>
 {{-- End Hero section --}}
 
-
-<div class="our-services section-pad-t30">
-   <div class="container">
-
-      <div class="row">
-         <div class="col-lg-12">
-            <div class="section-tittle text-center">
-               <h2>Nos TP les mieux notés </h2>
-            </div>
-         </div>
-      </div>
-      <div class="row d-flex justify-contnet-center">
-         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div class="single-services text-center mb-30">
-               <div class="services-ion">
-                  <span class="flaticon-tour"></span>
-               </div>
-               <div class="services-cap">
-                  <h5><a href="PenduleSimple.html">Pendule Simple</a></h5>
-                  <span>9.5</span>
-               </div>
-            </div>
-         </div>
-         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div class="single-services text-center mb-30">
-               <div class="services-ion">
-                  <span class="flaticon-cms"></span>
-               </div>
-               <div class="services-cap">
-                  <h5><a href="DeuxPendules.html">Pendule Double</a></h5>
-                  <span>9</span>
-               </div>
-            </div>
-         </div>
-         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div class="single-services text-center mb-30">
-               <div class="services-ion">
-                  <span class="flaticon-high-tech"></span>
-               </div>
-               <div class="services-cap">
-                  <h5><a href="PenduleRessort.html">Pendule avec Ressort</a></h5>
-                  <span>8.8</span>
-               </div>
-            </div>
-         </div>
-         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-            <div class="single-services text-center mb-30">
-               <div class="services-ion">
-                  <span class="flaticon-app"></span>
-               </div>
-               <div class="services-cap">
-                  <h5><a href="job_listing.html">Deux Pendules, Doubles Ressorts</a></h5>
-                  <span>8.6</span>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-
 <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="{{asset('images/gallery/boy.jpg')}}">
    <div class="container">
       <div class="row justify-content-center">

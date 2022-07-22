@@ -11,16 +11,19 @@ class MatiereController extends Controller
    
     public function index()
     {
+        $this->authorize('matieres.index');
         return view('admin.matieres.index');
     }
 
     public function create()
     {
+      $this->authorize('matieres.create');
         return view('admin.matieres.create');
     }
 
     public function edit(Matiere $matiere)
     {
+         $this->authorize('matieres.edit');
          return view('admin.matieres.create')->with('matiere',$matiere);
     }
     

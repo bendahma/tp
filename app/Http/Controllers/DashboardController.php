@@ -15,7 +15,7 @@ class DashboardController extends Controller
                   return view('admin.dashboard.index' );
                   break;
                case 'Eleve':
-                  return view('welcome' );
+                  return redirect(url('/'));
                   break;
                default:
                   return view('welcome' );

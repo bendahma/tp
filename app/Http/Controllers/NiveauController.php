@@ -8,17 +8,20 @@ class NiveauController extends Controller
 {
     public function index()
     {
+        $this->authorize('niveaux.create');
         return view('admin.niveau.index');
     }
 
     public function create()
     {
+        $this->authorize('niveaux.create');
         return view('admin.niveau.create');
     }
 
    
     public function edit(Niveau $niveau)
     {
+         $this->authorize('niveaux.create');
          return view('admin.niveau.create')->with('niveau',$niveau);
     }
 

@@ -52,8 +52,6 @@ Route::middleware(['auth'])->group(function () {
     
     Route::resource('cours', CoursController::class);
     Route::post('cours/{cour}/validation',[CoursController::class,'validateCours'])->name('cours.validateCours') ;
-    Route::get('cours/{cours}/download',[CoursController::class,'download'])->name('cours.download');
-
     Route::get('/cours/{cour}/download',[CoursController::class,'downloadCours'])->name('downloadCours');
     Route::get('/traveaux_pratique/{tp}',[FrontController::class,'simulation'])->name('tp.simulation');
 

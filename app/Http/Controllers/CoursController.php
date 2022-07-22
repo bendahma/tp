@@ -16,11 +16,13 @@ class CoursController extends Controller
 
    public function create()
    {
+      $this->authorize('cours.create');
        return view('admin.cours.create');
    }
 
    public function edit(Cours $cour)
    {
+        $this->authorize('cours.edit');
         return view('admin.cours.create')->with('cours',$cour);
    }
    
@@ -34,13 +36,12 @@ class CoursController extends Controller
    public function validateCours(Cours $cour)
    {
        $cour->update(['validated'=>true]) ;
-       toast('Succée','success') ;
+       toast('Sucéés','success') ;
        return redirect()->back();
    }
 
    public function downloadCours(Cours $cour)
-   {
-
+   {         
         $myFile = public_path('storage/' . $cour->file) ;
         $headers = ['Content-Type: application/pdf'];
         $newName = $cour->name . '.pdf';

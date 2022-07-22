@@ -17,7 +17,7 @@
       <div class="">
 
          <div class="container mx-auto my-5 p-5">
-            @if (!isset($matiere))
+            @if (!isset($niveau))
             @livewire('niveaux.create')
             @else
             @livewire('niveaux.edit', ['niveau' => $niveau], key($niveau->id))

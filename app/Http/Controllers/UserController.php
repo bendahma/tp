@@ -16,6 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
+      $this->authorize('users.index');
       return view('admin.users.index');
    }
 
@@ -26,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-      //   $this->authorize('users.create');
+        $this->authorize('users.create');
         return view('admin.users.create');
     }
 
@@ -38,7 +39,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-         // $this->authorize('users.store');
+         $this->authorize('users.show');
          return view('admin.users.profile', compact('user'));
 
     }
@@ -49,9 +50,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $this->authorize('users.edit');
+        return view('admin.users.profile', compact('user'));
+
+
     }
 
     /**

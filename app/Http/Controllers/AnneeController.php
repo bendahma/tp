@@ -10,17 +10,21 @@ class AnneeController extends Controller
 {
     public function index()
     {
+      $this->authorize('annee.index');
+
         return view('admin.annee.index');
     }
 
     public function create()
     {
+      $this->authorize('annee.create');
         return view('admin.annee.create');
     }
 
    
     public function edit(Annee $annee)
     {
+      $this->authorize('annee.edit');
          return view('admin.annee.create')->with('annee',$annee);
     }
 

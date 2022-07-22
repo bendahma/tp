@@ -25,7 +25,7 @@
                               <li><a href='#'>Moalim</a>
                                  <ul class='submenu'>
                                     @unlessrole('Eleve')
-                                    <li><a href='#'>Dashboard</a></li>
+                                    <li><a href='/dashboard'>Dashboard</a></li>
                                     @endunlessrole
                                     <li>
                                        <form action="{{route('logout')}}" method="POST">

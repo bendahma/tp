@@ -9,7 +9,6 @@ class Edit extends Component
    public $niveauCompnent,$name ;
 
    public function mount($niveau) {
-      dd($niveau) ;
       $this->niveauCompnent = $niveau ;
       $this->name = $this->niveauCompnent->name ;
    }
@@ -25,6 +24,6 @@ class Edit extends Component
    }
     public function render()
     {
-        return view('livewire.niveaus.edit');
+        return view('livewire.niveaux.edit');
     }
 }

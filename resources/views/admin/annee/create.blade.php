@@ -17,7 +17,7 @@
       <div class="">
 
          <div class="container mx-auto my-5 p-5">
-            @if (!isset($matiere))
+            @if (!isset($annee))
             @livewire('annees.create')
             @else
             @livewire('annees.edit', ['annee' => $annee], key($annee->id))

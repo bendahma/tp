@@ -15,7 +15,7 @@ class FrontController extends Controller
     public function index(){
        $matieres = Matiere::all(); 
        $recentTP = Traveau::with(['matiere','niveau','cour','user'])->orderBy('created_at','DESC')->limit(3)->get();
-       return view('welcome' , compact(['matieres','recentTP'])) ;
+       return view('welcome')->with('matieres',$matieres)->with('recentTP',$recentTP) ;
     }
     
     public function matiere(){
@@ -80,6 +80,7 @@ class FrontController extends Controller
     }
     
     public function contact() {
+      return view('contact');
 
     }
 }
