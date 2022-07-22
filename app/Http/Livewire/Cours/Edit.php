@@ -3,27 +3,41 @@
 namespace App\Http\Livewire\Cours;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
+
 use App\Models\Cours ;
 use App\Models\Matiere ;
 use App\Models\Niveau ;
 
 class Edit extends Component
 {
+   use WithFileUploads ;
+
    public $coursCompnent, $n ,$m ;
-   public  $name , $matiere_id ,$niveau_id ;
+   public  $name , $resume, $matiere_id ,$niveau_id, $fileSave,$f ;
 
    public function mount($cours) {
 
       $this->coursCompnent = $cours ;
+      
       $this->name = $this->coursCompnent->name ;
-      $this->n = $this->coursCompnent->niveau_id ;
-      $this->m = $this->coursCompnent->matiere_id ;
+      $this->resume = $this->coursCompnent->resume ;
+      $this->niveau_id = $this->coursCompnent->niveau_id ;
+      $this->matiere_id = $this->coursCompnent->matiere_id ;
      
+   }
+
+   public function updatedFileSave(){
+      $this->f = $this->fileSave->store('cours','public') ;
+      $this->coursCompnent->file = $this->f ;
+      $this->coursCompnent->save() ;
+        
    }
 
    public function updateCours(){
       $this->coursCompnent->update([
          'name' => $this->name ,
+         'resume' => $this->resume ,
          'matiere_id' => $this->matiere_id ,
          'niveau_id' => $this->niveau_id ,
          'user_id' => auth()->user()->id,

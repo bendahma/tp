@@ -15,7 +15,7 @@ class Create extends Component
 {
    use WithFileUploads, AuthorizesRequests;
 
-   public  $name,$body ,$numero_partie ,$user_id ,$matier ,$niveau_id ,$image ,$image_show = null ;
+   public  $name,$body ,$numero_partie ,$user_id ,$matier ,$niveau_id ,$image ,$image_show = null, $simulation ;
    public $cours ,$cour_id ;
 
   public function mount(){
@@ -50,6 +50,7 @@ class Create extends Component
          'matiere_id' => $this->matier,
          'niveau_id' => $this->niveau_id,
          'cour_id' => $this->cour_id,
+         'simulation' => $this->simulation ,
       ]);
 
       return redirect()->route('question.addQuestion',compact('tp'));

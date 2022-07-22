@@ -24,6 +24,11 @@ class TPController extends Controller
    {
         return view('admin.tp.create')->with('tp',$tp);
    }
+
+   public function show(Traveau $tp)
+   {
+        return view('admin.tp.show')->with('tp',$tp);
+   }
    
    public function destroy(Traveau $tp)
    {

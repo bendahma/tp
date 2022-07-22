@@ -34,9 +34,13 @@
                   <th class="px-4 py-3 text-center">Année</th>
                   @role('Super Admin')
                   <th class="px-4 py-3 text-center">Publié par</th>
+
+                  <th class="px-4 py-3 text-center"></th>
+
                   @endrole
                   <th class="px-4 py-3 text-center">Fichier</th>
-                  <th class="px-4 py-3 text-center">Validé</th>
+
+
 
                </tr>
             </thead>
@@ -58,11 +62,7 @@
                   </td>
                   @role('Super Admin')
                   <td> {{$c->user->name}} </td>
-                  @endrole
-                  <td class="py-3 text-sm text-center">
-                     <a class="px-4 py-2 text-sm font-medium leading-5 text-center text-white bg-green-600 border border-transparent rounded-lg  hover:bg-red-700 focus:outline-none focus:ring mx-3"
-                        href="">Télécharger</a>
-                  </td>
+
                   <td class="py-3 text-sm text-center">
                      @can('validate-cours')
                      @if ($c->validated == false)
@@ -73,6 +73,15 @@
                      </form>
                      @endif
                      @endcan
+                  </td>
+                  @endrole
+                  <td class="py-3 text-sm text-center">
+                     <a class="px-4 py-2 text-sm font-medium leading-5 text-center text-white bg-green-600 border border-transparent rounded-lg  hover:bg-red-700 focus:outline-none focus:ring mx-3"
+                        href="{{route('downloadCours',$c->id)}}">Télécharger</a>
+                  </td>
+
+
+
                   <td class="px-4 py-3 text-sm">
                      <div class="flex justify-evenly items-center ">
                         <div class="flex justiy-evenly gap-x-2">

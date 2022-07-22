@@ -87,6 +87,15 @@
                         </tr>
                         <tr>
                            <td>
+                              <div class="px-4 py-2 font-semibold">Simulation</div>
+                           </td>
+                           <td class="my-2">
+                              <textarea class="w-full rounded-lg font-semibold px-4 py-2" cols="15"
+                                 wire:model="simulation"> </textarea>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
                               <div class="px-4 py-2 font-semibold">Image</div>
                            </td>
                            <td class="my-2">

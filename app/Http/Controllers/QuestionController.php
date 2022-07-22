@@ -56,6 +56,8 @@ class QuestionController extends Controller
 
     public function addQuestion(Traveau $tp){
 
+        $this->authorize('question.create');
+
       return view('admin.question.create',compact('tp')) ;
 
     }

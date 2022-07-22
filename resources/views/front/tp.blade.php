@@ -20,7 +20,7 @@
    <div class="container">
       <div class="row">
 
-         @foreach ($tps as $tp)
+         @forelse ($tps as $tp)
          <div class="col-xl-6 col-lg-6 col-md-6" style="margin: 16px 0 ">
 
             <section class="featured-job-area">
@@ -62,31 +62,29 @@
                      <p class="card-text font-weight-bold"> {{ substr($tp->body, 0,100) . '...'}} </p>
                      <div class="d-flex">
                         <a href="{{route('tp.download',$tp->id)}}" class="btn head-btn1">Télécharger TP</a>
-                        <a href="" class="btn  btn-info">Simulation</a>
+                        <a href="{{route('tp.simulation',$tp->id)}}" class="btn  btn-info">TP et Simulation</a>
 
                      </div>
                   </div>
                </div>
             </section>
          </div>
-         @endforeach
+         @empty
+         <div class="" style=" ">
 
-      </div>
-   </div>
-</div>
-
-<div class="pagination-area pb-115 text-center">
-   <div class="container">
-      <div class="row">
-         <div class="col-xl-12">
-            <div class="single-wrap d-flex justify-content-center">
-               <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-start">
-                     <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                  </ul>
-               </nav>
-            </div>
+            <section class="featured-job-area">
+               <div class="">
+                  <div class="">
+                     <h5 class="" style="font-weight: bold; font-size:2rem; text-align:center; width:100%;">
+                        Aucun TP n'existe pour le moment .
+                     </h5>
+                     <br><br>
+                  </div>
+               </div>
+            </section>
          </div>
+         @endforelse
+
       </div>
    </div>
 </div>

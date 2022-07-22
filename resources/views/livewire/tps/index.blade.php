@@ -64,30 +64,38 @@
                         @csrf
                         <button type="submit"
                            class="px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring">Validé
-                           TP</button>
+                        </button>
                      </form>
                      @endif
                      @endcan
                   </td>
                   <td class="py-3 text-sm text-center">
                      <a class="px-4 py-2 text-sm font-medium leading-5 text-center text-white bg-red-600 border border-transparent rounded-lg  hover:bg-red-700 focus:outline-none focus:ring mx-3"
-                        href="{{route('tp.download',$tp->id)}}">Télécharger TP</a>
+                        href="{{route('tp.download',$tp->id)}}">Télécharger</a>
                   </td>
 
                   <td class="px-4 py-3 text-sm">
                      <div class="flex justify-evenly items-center ">
                         <div class="flex justiy-evenly gap-x-2">
-                           <a href="{{route('question.addQuestion',$tp->id)}}"> <i
-                                 class="fas fa-question text-green-400 text-lg"></i>
-                              <a href="{{route('tp.edit',$tp->id)}}"> <i class="fas fa-edit text-blue-600 text-lg"></i>
-                              </a>
-                              <form method="post" action="{{route('tp.destroy',$tp->id)}}" class="">
-                                 @csrf
-                                 @method('DELETE')
-                                 <button type="submit">
-                                    <i class="fas fa-trash text-red-600 text-lg"></i>
-                                 </button>
-                              </form>
+
+                           <a href="{{route('tp.show',$tp->id)}}">
+                              <i class="fas fa-eye text-purple-600 text-xl"></i></i>
+                           </a>
+                           @role('Enseignant')
+                           <a href="{{route('question.addQuestion',$tp->id)}}">
+                              <i class="fas fa-question text-green-400 text-xl"></i>
+                           </a>
+                           @endrole
+                           <a href="{{route('tp.edit',$tp->id)}}">
+                              <i class="fas fa-edit text-blue-600 text-xl"></i>
+                           </a>
+                           <form method="post" action="{{route('tp.destroy',$tp->id)}}" class="">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit">
+                                 <i class="fas fa-trash text-red-600 text-xl"></i>
+                              </button>
+                           </form>
 
                         </div>
                      </div>

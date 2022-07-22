@@ -25,6 +25,7 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name'=>'cours.*']);
         Permission::create(['name'=>'cours.list']);
         Permission::create(['name'=>'validate-cours']);
-
+        
+        Permission::create(['name'=>'question.create']);
     }
 }

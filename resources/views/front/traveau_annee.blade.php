@@ -1,13 +1,15 @@
 @extends('layouts.front')
 
 @section('content')
+
 <div class="slider-area ">
-   <div class="slider-height2 d-flex align-items-center" data-background="{{asset('images/hero/matiere.png')}}">
+   <div class="single-slider slider-height2 d-flex align-items-center"
+      data-background="{{asset('images/hero/annee.jpg')}}">
       <div class="container">
          <div class="row">
             <div class="col-xl-12">
                <div class="hero-cap text-center">
-                  <h2>Liste des Matières</h2>
+                  <h2>Années</h2>
                </div>
             </div>
          </div>
@@ -19,14 +21,16 @@
    <div class="container">
       <div class="row">
 
-         @foreach ($matieres as $matiere)
+         @foreach ($niveaux as $niveau)
          <div class="col-xl-4 col-lg-3 col-md-6" style="margin: 14px 0">
             <section class="featured-job-area">
                <div class="container">
                   <div class="job-tittle">
-                     <a href="{{route('annee',$matiere->id)}}">
-                        <h2>{{$matiere->name}}</h2>
+                     <a href="{{url('/traveaux_pratique/matiere/'. $matiere->id .'/annee/'. $niveau->id .'/tp')}}"
+                        style="text-align: center">
+                        <h4>{{$niveau->name}}</h4>
                      </a>
+
                   </div>
                </div>
          </div>
@@ -39,9 +43,6 @@
    </div>
    </section>
 
-</div>
-</div>
-</div>
 </div>
 
 @endsection

@@ -1,22 +1,34 @@
 <div>
    <div class="md:flex w-full ">
-      <form wire:submit.prevent="updateCours" class="w-2/3 mx-auto">
+      <form wire:submit.prevent="updateCours" class="w-full mx-auto">
          @csrf
 
          <div class="w-full justify-center  mx-2 h-64">
             <div class="bg-white p-3 shadow-lg rounded-lg">
                <div class="text-gray-700 flex justify-center w-full">
 
-                  <table>
+                  <table class="w-full">
                      <thead></thead>
                      <tbody>
                         <tr>
-                           <td>
+                           <td class="">
                               <div class="px-4 py-2 font-semibold">Titre cours</div>
                            </td>
                            <td class="py-2">
 
-                              <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name">
+                              <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name"
+                                 placeholder="Exp: Loi des noeuds">
+
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <div class="px-4 py-2 font-semibold">Resumé cours</div>
+                           </td>
+                           <td class="py-2">
+
+                              <textarea type="text" class="w-full rounded-lg font-semibold px-4 py-2" cols="10" rows="6"
+                                 wire:model="resume" placeholder=""></textarea>
 
                            </td>
                         </tr>
@@ -26,6 +38,7 @@
                            </td>
                            <td class="pt-2">
                               <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matiere_id">
+                                 <option selected> Choisi un matière </option>
                                  @foreach ($matieres as $matiere)
                                  <option value="{{$matiere->id}}" {{ $matiere->id == $m ? 'selected' : '' }}>
                                     {{$matiere->name}} </option>
@@ -39,10 +52,10 @@
                            </td>
                            <td class="pt-2">
                               <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id">
+                                 <option selected> Choisi année scholaire </option>
                                  @foreach ($niveaux as $niveau)
                                  <option value="{{$niveau->id}}" {{ $niveau->id == $n ? 'selected' : ''}}>
-                                    {{$niveau->name}}
-                                 </option>
+                                    {{$niveau->name}} </option>
                                  @endforeach
                               </select>
                            </td>
@@ -52,12 +65,12 @@
                               <div class="px-4 py-2 font-semibold">Fichier du cours</div>
                            </td>
                            <td class="py-1"><input type="file" class="w-full rounded-lg font-semibold px-4 py-2"
-                                 wire:model="file">
+                                 wire:model="fileSave">
                            </td>
                         </tr>
                         <tr>
                            <td> </td>
-                           <td>
+                           <td class="flex justify-end">
                               <x-button type="submit" class="">Mettre à jours</x-button>
                            </td>
                         </tr>

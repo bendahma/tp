@@ -51,6 +51,7 @@ class DatabaseSeeder extends Seeder
          $user2->givePermissionTo('tp.list');
          $user2->givePermissionTo('cours.*');
          $user2->givePermissionTo('cours.list');
+         $user2->givePermissionTo('question.create');
          $user2->assignRole('Enseignant');
          
          $user3->assignRole('Eleve');

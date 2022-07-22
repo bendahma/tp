@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cours;
 use App\Http\Requests\StoreCoursRequest;
 use App\Http\Requests\UpdateCoursRequest;
-
+use Storage ;
 class CoursController extends Controller
 {
     
@@ -29,5 +29,22 @@ class CoursController extends Controller
        $cour->delete() ;
        toast('Le cours à été supprime avec success','success') ;
        return redirect()->back();
+   }
+
+   public function validateCours(Cours $cour)
+   {
+       $cour->update(['validated'=>true]) ;
+       toast('Succée','success') ;
+       return redirect()->back();
+   }
+
+   public function downloadCours(Cours $cour)
+   {
+
+        $myFile = public_path('storage/' . $cour->file) ;
+        $headers = ['Content-Type: application/pdf'];
+        $newName = $cour->name . '.pdf';
+
+        return response()->download($myFile, $newName, $headers);
    }
 }

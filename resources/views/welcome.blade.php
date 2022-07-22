@@ -19,20 +19,23 @@
             <div class="row">
                <div class="col-xl-8">
 
-                  <form action="#" class="search-box">
+                  <form action="{{route('recherche')}}" class="search-box" method="POST">
+                     @csrf
                      <div class="input-form">
-                        <input type="text" placeholder="Entrez le TP que vous recherchez">
+                        <input type="text" placeholder="Entrez le TP que vous recherchez" name="recherche">
                      </div>
                      <div class="select-form">
                         <div class="select-itms">
-                           <select name="select" id="select1">
-                              <option value="">Physique</option>
-                              <option value="">Science</option>
+                           <select name="matiere_id" id="select1" style="z-index: 99">
+                              <option value="all" selected>Toutes</option>
+                              @foreach ($matieres as $matiere)
+                              <option value="{{$matiere->id}}">{{$matiere->name}}</option>
+                              @endforeach
                            </select>
                         </div>
                      </div>
                      <div class="search-form">
-                        <a href="Tp.html" class="btn">Rechercher</a>
+                        <button type="submit" class="btn">Rechercher</button>
                      </div>
                   </form>
                </div>
@@ -128,71 +131,34 @@
       <div class="row justify-content-center">
          <div class="col-xl-10">
 
+            @foreach ($recentTP as $tp)
             <div class="single-job-items mb-30">
                <div class="job-items">
                   <div class="company-img">
-                     <a href="PenduleSimple.html"><img src="assets/img/icon/PenduleSimple.gif" alt=""></a>
+                     <a href="PenduleSimple.html"><img src="" alt=""></a>
                   </div>
                   <div class="job-tittle">
                      <a href="PenduleSimple.html">
-                        <h4>Pendule Simple</h4>
+                        <h4>{{$tp->name}}</h4>
                      </a>
                      <ul>
-                        <li>Manel Smatti</li>
-                        <li><i class="fas fa-map-marker-alt"></i>Alger, Algeria</li>
-                        <li>4AM</li>
+                        <li>{{$tp->user->name}}</li>
+                        <li>{{$tp->niveau->name}}</li>
+                        <li>{{$tp->matiere->name}}</li>
+                        {{-- <li><i class="fas fa-map-marker-alt"></i>Alger, Algeria</li>
+                        <li>4AM</li> --}}
                      </ul>
                   </div>
                </div>
                <div class="items-link f-right">
-                  <a>Facile</a>
-                  <span>Publie il y'a 6h</span>
+                  <a href="{{route('tp.simulation',$tp->id)}}">Voir</a>
+                  <span>{{$tp->created_at->diffForHumans()}}</span>
                </div>
             </div>
+            @endforeach
 
-            <div class="single-job-items mb-30">
-               <div class="job-items">
-                  <div class="company-img">
-                     <a href="DeuxPendules.html"><img src="assets/img/icon/DeuxPendules.png" alt=""></a>
-                  </div>
-                  <div class="job-tittle">
-                     <a href="DeuxPendules.html">
-                        <h4>Pendule Double</h4>
-                     </a>
-                     <ul>
-                        <li>Said Babaci</li>
-                        <li><i class="fas fa-map-marker-alt"></i>Alger, Algeria</li>
-                        <li>4AM</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="items-link f-right">
-                  <a>Facile</a>
-                  <span>Publié il y'a 15h</span>
-               </div>
-            </div>
 
-            <div class="single-job-items mb-30">
-               <div class="job-items">
-                  <div class="company-img">
-                     <a href="PenduleRessort.html"><img src="assets/img/icon/PenduleRessort.png" alt=""></a>
-                  </div>
-                  <div class="job-tittle">
-                     <a href="PenduleRessort.html">
-                        <h4>Pendule Ressort</h4>
-                     </a>
-                     <ul>
-                        <li>Khettar Faycal</li>
-                        <li><i class="fas fa-map-marker-alt"></i>Oran, Algeria</li>
-                        <li>4AM</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="items-link f-right">
-                  <a>normal</a>
-                  <span>Publie il ya 2 jours</span>
-               </div>
-            </div>
+
          </div>
       </div>
    </div>

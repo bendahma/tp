@@ -24,7 +24,7 @@
             <section class="featured-job-area">
                <div class="container">
                   <div class="job-tittle">
-                     <a href="{{route('annee',$matiere->id)}}">
+                     <a href="{{route('tp.annee',$matiere->id)}}">
                         <h2>{{$matiere->name}}</h2>
                      </a>
                   </div>

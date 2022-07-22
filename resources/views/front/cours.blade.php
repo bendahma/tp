@@ -16,12 +16,12 @@
    </div>
 </div>
 
-<div class="job-listing-area pt-120 pb-120">
+<div class="job-listing-area pt-60 pb-120">
    <div class="container">
       <div class="row">
 
 
-         @foreach ($cours as $cour)
+         @forelse ($cours as $cour)
          <div class="col-xl-4 col-lg-9 col-md-8" style="margin: 16px 0 ">
 
             <section class="featured-job-area">
@@ -34,25 +34,24 @@
                </div>
             </section>
          </div>
-         @endforeach
-      </div>
-   </div>
-</div>
+         @empty
+         <div class="" style=" ">
 
-<div class="pagination-area pb-115 text-center">
-   <div class="container">
-      <div class="row">
-         <div class="col-xl-12">
-            <div class="single-wrap d-flex justify-content-center">
-               <nav aria-label="Page navigation example">
-                  <ul class="pagination justify-content-start">
-                     <li class="page-item active"><a class="page-link" href="#">01</a></li>
-
-                  </ul>
-               </nav>
-            </div>
+            <section class="featured-job-area">
+               <div class="">
+                  <div class="">
+                     <h5 class="" style="font-weight: bold; font-size:2rem; text-align:center; width:100%;">
+                        Aucun cours
+                        n'est
+                        disponible
+                     </h5>
+                  </div>
+               </div>
+            </section>
          </div>
+         @endforelse
       </div>
    </div>
 </div>
+
 @endsection

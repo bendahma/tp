@@ -13,7 +13,7 @@ class Edit extends Component
    use WithFileUploads ;
 
    public $tpCompnent ;
-   public $name , $body, $numero_partie ,$user_id ,$matiere_id ,$niveau_id ;
+   public $name , $body, $numero_partie ,$user_id ,$matiere_id ,$niveau_id, $simulation ;
    public $cours ,$cour_id ;
    public $image ,$image_show , $image_check;
 
@@ -24,6 +24,7 @@ class Edit extends Component
       $this->tpCompnent = $tp ;
       $this->name = $this->tpCompnent->name ;
       $this->body = $this->tpCompnent->body ;
+      $this->simulation = $this->tpCompnent->simulation ;
       $this->numero_partie =  $this->tpCompnent->numero_partie ;
       $this->matiere_id =  $this->tpCompnent->matiere_id ;
       $this->niveau_id =  $this->tpCompnent->niveau_id ;
@@ -50,10 +51,13 @@ class Edit extends Component
    public function updateTP(){
       $this->tpCompnent->update([
          'name' => $this->name,
+         'body' => $this->body,
+         'simulation' => $this->simulation,
          'numero_partie' => $this->numero_partie,
          'user_id' => auth()->user()->id,
          'matiere_id' => $this->matiere_id,
          'niveau_id' => $this->niveau_id,
+
       ]);
       return redirect()->route('tp.index');
    }

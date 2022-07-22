@@ -18,15 +18,17 @@ Route::get('lang/{locale}', LocalizationController::class)->name('lang');
 
 Route::get('/', [FrontController::class,'index'])->name('welcome');
 Route::get('/matiere',[FrontController::class,'matiere'])->name('matiere');
-Route::get('/traveaux_pratiques',[FrontController::class,'traveaux_pratqiues'])->name('traveaux_pratqiues');
+Route::get('/traveaux_pratiques',[FrontController::class,'traveaux_matiere'])->name('traveaux_pratqiues');
 Route::get('/matiere/{matiere}/annee',[FrontController::class,'annee'])->name('annee');
+Route::get('/traveau_pratique/matiere/{matiere}/annee',[FrontController::class,'traveau_annee'])->name('tp.annee');
 Route::get('/matiere/{matiere}/annee/{niveau}/cours',[FrontController::class,'cours'])->name('cours');
+Route::get('/traveaux_pratique/matiere/{matiere}/annee/{niveau}/tp',[FrontController::class,'traveau_tp'])->name('traveau.tp');
 Route::get('/about',[FrontController::class,'about'])->name('about');
 Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 
-Route::middleware(['auth'])->group(function () {
+Route::post('/recherche' , [FrontController::class,'recherche'])->name('recherche') ;
 
-    Route::get('/cours/{cour}/download',[FrontController::class,'downloadCours'])->name('downloadCours');
+Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
@@ -49,8 +51,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('question', QuestionController::class);
     
     Route::resource('cours', CoursController::class);
-    Route::post('cours/{cours}/validateTp',[CoursController::class,'validateCours'])->name('cours.validateCours') ;
+    Route::post('cours/{cour}/validation',[CoursController::class,'validateCours'])->name('cours.validateCours') ;
     Route::get('cours/{cours}/download',[CoursController::class,'download'])->name('cours.download');
+
+    Route::get('/cours/{cour}/download',[CoursController::class,'downloadCours'])->name('downloadCours');
+    Route::get('/traveaux_pratique/{tp}',[FrontController::class,'simulation'])->name('tp.simulation');
 
 });
 
