@@ -9,8 +9,8 @@
                      <div class="w-full flex items-center">
                         <div class="px-4 py-2 font-semibold">Annee scolaire</div>
                         <div class="px-4 py-2 flex flex-col w-2/3">
-                           <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name"
-                              placeholder="Exp: 2021-2022">
+                           <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
+                              wire:model="name" placeholder="Exp: 2021-2022">
                            @error('name') <span class="text-red-700 font-bold text-sm my-1">{{ $message }}</span>
                            @enderror
                         </div>

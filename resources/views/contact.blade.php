@@ -30,8 +30,9 @@
                <div class="row">
                   <div class="col-12">
                      <div class="form-group">
-                        <input class="form-control" name="nom" id="subject" type="text" onfocus="this.placeholder = ''"
-                           onblur="this.placeholder = 'Votre Nom '" placeholder="Votre Nom">
+                        <input class="form-control" required name="nom" id="subject" type="text"
+                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre Nom '"
+                           placeholder="Votre Nom">
                      </div>
                   </div>
                   <div class="col-sm-6">
@@ -43,14 +44,14 @@
                   </div>
                   <div class="col-sm-6">
                      <div class="form-group">
-                        <input class="form-control valid" name="phone" id="email" type="text"
+                        <input class="form-control valid" required name="phone" id="email" type="text"
                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre numéro de téléphone '"
                            placeholder="Votre numéro de téléphone ">
                      </div>
                   </div>
                   <div class="col-12">
                      <div class="form-group">
-                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                        <textarea class="form-control w-100" required name="message" id="message" cols="30" rows="9"
                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre Message'"
                            placeholder="Votre Message"></textarea>
                      </div>

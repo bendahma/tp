@@ -16,8 +16,8 @@
                               <div class="px-4 py-2 font-semibold">Titre TP</div>
                            </td>
                            <td>
-                              <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name"
-                                 placeholder="">
+                              <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
+                                 wire:model="name" placeholder="">
                            </td>
                         </tr>
                         <tr class="my-4">
@@ -25,7 +25,7 @@
                               <div class="px-4 py-2 font-semibold">Nombre des parties</div>
                            </td>
                            <td>
-                              <input type="text" class="w-full rounded-lg font-semibold px-4 py-2"
+                              <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
                                  wire:model="numero_partie" placeholder="">
                            </td>
                         </tr>
@@ -34,7 +34,7 @@
                               <div class="px-4 py-2 font-semibold">Niveau scolaire</div>
                            </td>
                            <td>
-                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id">
+                              <select required class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id">
                                  <option selected> Niveau scolaire </option>
                                  @foreach ($niveaux as $niveau)
                                  <option value="{{$niveau->id}}" {{ $niveau->id == $niveau_id ? 'selected' : '' }} >
@@ -48,7 +48,8 @@
                               <div class="px-4 py-2 font-semibold">Matiere</div>
                            </td>
                            <td class="my-2">
-                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matiere_id">
+                              <select required class="w-full rounded-lg font-semibold px-4 py-2"
+                                 wire:model="matiere_id">
                                  <option selected> Matière </option>
                                  @foreach ($matieres as $matiere)
                                  <option value="{{$matiere->id}}" {{ $matiere_id==$matiere->id ? 'selected' : '' }}>
@@ -64,8 +65,8 @@
                               <div class="px-4 py-2 font-semibold">Enoncé</div>
                            </td>
                            <td class="my-2">
-                              <textarea class="w-full rounded-lg font-semibold px-4 py-2" cols="15"
-                                 wire:model="body"> </textarea>
+                              <textarea class="w-full rounded-lg font-semibold px-4 py-2" cols="15" wire:model="body"
+                                 required> </textarea>
                            </td>
                         </tr>
                         <tr>
@@ -73,7 +74,7 @@
                               <div class="px-4 py-2 font-semibold">Simulation</div>
                            </td>
                            <td class="my-2">
-                              <textarea class="w-full rounded-lg font-semibold px-4 py-2" cols="15"
+                              <textarea class="w-full rounded-lg font-semibold px-4 py-2" cols="15" required
                                  wire:model="simulation"> </textarea>
                            </td>
                         </tr>

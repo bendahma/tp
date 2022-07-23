@@ -9,7 +9,8 @@
                      <div class="w-full flex items-center">
                         <div class="px-4 py-2 font-semibold">Année scolaire</div>
                         <div class="px-4 py-2 flex flex-col w-1/2">
-                           <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name">
+                           <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
+                              wire:model="name">
                         </div>
                         <x-button type="submit" class="">Mettre à jours</x-button>
                      </div>

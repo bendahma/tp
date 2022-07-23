@@ -31,7 +31,7 @@
                   <div class="grid grid-cols-2">
                      <div class="px-4 py-2 font-semibold">Name</div>
                      <div class="px-4 py-2 flex flex-col">
-                        <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name">
+                        <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name">
                         @error('name') <span class="text-red-700 font-bold text-sm my-1">{{ $message }}</span> @enderror
 
                      </div>
@@ -39,7 +39,8 @@
                   <div class="grid grid-cols-2">
                      <div class="px-4 py-2 font-semibold">Username</div>
                      <div class="px-4 py-2 flex flex-col">
-                        <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="username">
+                        <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
+                           wire:model="username">
                         @error('username') <span class="text-red-700 font-bold text-sm my-1">{{ $message }}</span>
                         @enderror
 
@@ -48,7 +49,8 @@
                   <div class="grid grid-cols-2">
                      <div class="px-4 py-2 font-semibold">E-mail</div>
                      <div class="px-4 py-2 flex flex-col">
-                        <input type="email" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="email">
+                        <input type="email" required class="w-full rounded-lg font-semibold px-4 py-2"
+                           wire:model="email">
                         @error('email') <span class="text-red-700 font-bold text-sm my-1">{{ $message }}</span>
                         @enderror
 
@@ -67,7 +69,8 @@
                   <div class="grid grid-cols-2">
                      <div class="px-4 py-2 font-semibold">Password</div>
                      <div class="px-4 py-2 flex flex-col">
-                        <input type="password" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="password">
+                        <input type="password" required class="w-full rounded-lg font-semibold px-4 py-2"
+                           wire:model="password">
                         @error('password') <span class="text-red-700 font-bold text-sm my-1">{{ $message }}</span>
                         @enderror
                      </div>
@@ -75,7 +78,7 @@
                   <div class="grid grid-cols-2">
                      <div class="px-4 py-2 font-semibold">Confirm password</div>
                      <div class="px-4 py-2 flex flex-col">
-                        <input type="password" class="w-full rounded-lg font-semibold px-4 py-2"
+                        <input type="password" required class="w-full rounded-lg font-semibold px-4 py-2"
                            wire:model="password_confirmation">
                      </div>
                   </div>

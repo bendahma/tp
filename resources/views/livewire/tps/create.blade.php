@@ -16,8 +16,8 @@
                               <div class="px-4 py-2 font-semibold">Titre TP</div>
                            </td>
                            <td>
-                              <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name"
-                                 placeholder="">
+                              <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
+                                 wire:model="name" placeholder="">
                            </td>
                         </tr>
                         <tr class="my-4">
@@ -25,7 +25,7 @@
                               <div class="px-4 py-2 font-semibold">Nombre des parties</div>
                            </td>
                            <td>
-                              <input type="text" class="w-full rounded-lg font-semibold px-4 py-2"
+                              <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
                                  wire:model="numero_partie" placeholder="">
                            </td>
                         </tr>
@@ -34,7 +34,7 @@
                               <div class="px-4 py-2 font-semibold">Niveau scolaire</div>
                            </td>
                            <td>
-                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id">
+                              <select required class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id">
                                  <option selected> Niveau scolaire </option>
                                  @foreach ($niveaux as $niveau)
                                  <option value="{{$niveau->id}}"> {{$niveau->name}} </option>
@@ -47,7 +47,7 @@
                               <div class="px-4 py-2 font-semibold">Matiere</div>
                            </td>
                            <td class="my-2">
-                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matier">
+                              <select required class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matier">
                                  <option selected> Matière </option>
                                  @foreach ($matieres as $matiere)
                                  <option value="{{$matiere->id}}"> {{$matiere->name}} </option>
@@ -112,7 +112,7 @@
                                              class="mt-2 leading-normal px-4 py-2 font-semibold bg-purple-600 text-white text-sm rounded-full">
                                              Upload image
                                           </span>
-                                          <input type='file' class="hidden" wire:model="image" />
+                                          <input type='file' class="hidden" wire:model="image" required />
                                        </label>
                                     </div>
                                  </div>

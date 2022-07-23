@@ -16,8 +16,8 @@
                            </td>
                            <td class="py-2">
 
-                              <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name"
-                                 placeholder="Exp: Loi des noeuds">
+                              <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
+                                 wire:model="name" placeholder="Exp: Loi des noeuds">
 
                            </td>
                         </tr>
@@ -27,8 +27,8 @@
                            </td>
                            <td class="py-2">
 
-                              <textarea type="text" class="w-full rounded-lg font-semibold px-4 py-2" cols="10" rows="6"
-                                 wire:model="resume" placeholder=""></textarea>
+                              <textarea type="text" required class="w-full rounded-lg font-semibold px-4 py-2" cols="10"
+                                 rows="6" wire:model="resume" placeholder=""></textarea>
 
                            </td>
                         </tr>
@@ -37,7 +37,8 @@
                               <div class="px-4 py-2 font-semibold">Matière du cours</div>
                            </td>
                            <td class="pt-2">
-                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matiere_id">
+                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="matiere_id"
+                                 required>
                                  <option selected> Choisi un matière </option>
                                  @foreach ($matieres as $matiere)
                                  <option value="{{$matiere->id}}" {{ $matiere->id == $m ? 'selected' : '' }}>
@@ -48,11 +49,11 @@
                         </tr>
                         <tr>
                            <td>
-                              <div class="px-4 py-2 font-semibold">Année scholaire</div>
+                              <div class="px-4 py-2 font-semibold">Année Scolaire </div>
                            </td>
                            <td class="pt-2">
-                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id">
-                                 <option selected> Choisi année scholaire </option>
+                              <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="niveau_id" required>
+                                 <option selected> Choisi année scolaire </option>
                                  @foreach ($niveaux as $niveau)
                                  <option value="{{$niveau->id}}" {{ $niveau->id == $n ? 'selected' : ''}}>
                                     {{$niveau->name}} </option>

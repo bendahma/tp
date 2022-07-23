@@ -24,22 +24,22 @@
                      <div class="grid grid-cols-2">
                         <div class="px-4 py-2 font-semibold">Name</div>
                         <div class="px-4 py-2 flex flex-col">
-                           <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="name"
-                              value="{{$user->name}}">
+                           <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
+                              wire:model="name" value="{{$user->name}}">
                         </div>
                      </div>
                      <div class="grid grid-cols-2">
                         <div class="px-4 py-2 font-semibold">Username</div>
                         <div class="px-4 py-2 flex flex-col">
-                           <input type="text" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="username"
-                              value="{{$user->username}}">
+                           <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2"
+                              wire:model="username" value="{{$user->username}}">
                         </div>
                      </div>
                      <div class="grid grid-cols-2">
                         <div class="px-4 py-2 font-semibold">E-mail</div>
                         <div class="px-4 py-2 flex flex-col">
-                           <input type="email" class="w-full rounded-lg font-semibold px-4 py-2" wire:model="email"
-                              value="{{$user->email}}">
+                           <input type="email" required class="w-full rounded-lg font-semibold px-4 py-2"
+                              wire:model="email" value="{{$user->email}}">
                         </div>
                      </div>
                      <div class="grid grid-cols-2">

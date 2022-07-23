@@ -4,7 +4,7 @@
       <div class="w-full flex items-center bg-white rounded-lg shadow-lg py-3 px-5">
          <div class="px-4 py-2 font-semibold">Question :</div>
          <div class="px-4 py-2 flex w-2/3">
-            <input type="text" class="w-full rounded-lg font-semibold px-4 py-2 mx-4" wire:model="name">
+            <input type="text" required class="w-full rounded-lg font-semibold px-4 py-2 mx-4" wire:model="name">
             <select class="w-1/4 rounded-lg font-semibold px-4 py-2" wire:model="partie">
                <option selected>Partie </option>
                @for ($i = 1; $i <= $tp->numero_partie; $i++)
