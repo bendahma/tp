@@ -75,18 +75,7 @@
                </select>
             </div>
          </div>
-         {{-- Download --}}
-         <div class="">
-            <button data-tooltip-target="tooltip-download" wire:click="download()"
-               class="text-purple-700 border mr-3 border-purple-700 hover:bg-purple-700 hover:text-white focus:ring-2 focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800">
-               <i class="fas fa-cloud-download-alt"></i>
-            </button>
-            <div id="tooltip-download" role="tooltip"
-               class="z-50 inline-block absolute invisible py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
-               Download
-               <div class="tooltip-arrow" data-popper-arrow></div>
-            </div>
-         </div>
+
       </div>
       <div class=" w-1/4 flex-wrap items-stretch">
          <input type="text" class="justify-end my-1 py-2 w-full rounded-lg bg-gray-50 text-sm font-semibold "

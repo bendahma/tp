@@ -37,7 +37,7 @@ class Create extends Component
 
    public function saveNewUser(){
 
-      $this->authorize('users-store');
+      $this->authorize('users.store');
 
       $this->validate();
 
