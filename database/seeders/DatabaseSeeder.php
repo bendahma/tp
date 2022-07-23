@@ -41,7 +41,9 @@ class DatabaseSeeder extends Seeder
          $user3 = User::find(3) ;
 
          $user->givePermissionTo('users.*');
+         $user->givePermissionTo('messages.*');
          $user->givePermissionTo('matieres.*');
+         $user->givePermissionTo('messages.open');
          $user->givePermissionTo('niveaux.*');
          $user->givePermissionTo('annee.*');
          $user->givePermissionTo('tp.list');

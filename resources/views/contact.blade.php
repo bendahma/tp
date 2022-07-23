@@ -25,28 +25,27 @@
             <h2 class="contact-title">Entrer en contact</h2>
          </div>
          <div class="col-lg-8">
-            <form class="form-contact contact_form" method="post" id="contactForm" novalidate="novalidate">
+            <form class="form-contact contact_form" method="post" action="{{route('messages.store')}}">
+               @csrf
                <div class="row">
                   <div class="col-12">
                      <div class="form-group">
-                        <input class="form-control" name="subject" id="subject" type="text"
-                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre Nom'"
-                           placeholder="Votre Nom">
+                        <input class="form-control" name="nom" id="subject" type="text" onfocus="this.placeholder = ''"
+                           onblur="this.placeholder = 'Votre Nom '" placeholder="Votre Nom">
                      </div>
                   </div>
                   <div class="col-sm-6">
                      <div class="form-group">
-                        <input class="form-control valid" name="name" id="name" type="text"
-                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre email'"
-                           placeholder="Votre email">
+                        <input class="form-control valid" name="email" id="name" type="email"
+                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre email  (optionnel)'"
+                           placeholder="Votre email  (optionnel)">
                      </div>
                   </div>
                   <div class="col-sm-6">
                      <div class="form-group">
-                        <input class="form-control valid" name="email" id="email" type="email"
-                           onfocus="this.placeholder = ''"
-                           onblur="this.placeholder = 'Votre numéro de téléphone  (optionnel)'"
-                           placeholder="Votre numéro de téléphone  (optionnel)">
+                        <input class="form-control valid" name="phone" id="email" type="text"
+                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre numéro de téléphone '"
+                           placeholder="Votre numéro de téléphone ">
                      </div>
                   </div>
                   <div class="col-12">

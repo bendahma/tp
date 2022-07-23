@@ -32,6 +32,9 @@ class PermissionsSeeder extends Seeder
 
         Permission::create(['name'=>'matieres.*']);
 
+        Permission::create(['name'=>'messages.*']);
+        Permission::create(['name'=>'messages.open']);
+
         Permission::create(['name'=>'question.create']);
     }
 }

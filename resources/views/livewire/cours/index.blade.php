@@ -106,8 +106,8 @@
                @empty
                <tr>
                   <td colspan="3" class="w-full">
-                     <span class="w-full justify-center font-bold h-10 text-center"> Aucun cours exites pour le
-                        moments </span>
+                     <span class="w-full justify-center font-bold h-10 text-center"> Aucun cours n'existe pour le moment
+                     </span>
                   </td>
                </tr>
                @endforelse

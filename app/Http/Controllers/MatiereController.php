@@ -17,7 +17,7 @@ class MatiereController extends Controller
 
     public function create()
     {
-      $this->authorize('matieres.create');
+        $this->authorize('matieres.create');
         return view('admin.matieres.create');
     }
 

@@ -12,6 +12,7 @@ use App\Http\Controllers\TPController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\CoursController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\MessageController;
 
 Route::get('lang/{locale}', LocalizationController::class)->name('lang');
 
@@ -51,6 +52,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('question', QuestionController::class);
     
     Route::resource('cours', CoursController::class);
+    Route::resource('/messages', MessageController::class);
+    Route::get('/messages/{message}', [MessageController::class,'open'])->name('messages.open');
     Route::post('cours/{cour}/validation',[CoursController::class,'validateCours'])->name('cours.validateCours') ;
     Route::get('/cours/{cour}/download',[CoursController::class,'downloadCours'])->name('downloadCours');
     Route::get('/traveaux_pratique/{tp}',[FrontController::class,'simulation'])->name('tp.simulation');
