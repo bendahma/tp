@@ -7,7 +7,9 @@
                <div class="col-lg-3 col-md-2">
                   <!-- Logo -->
                   <div class="logo">
-                     <a href="index.html"><img src="assets/img/logo/physic1.png" alt=""></a>
+                     <a href="/">
+                        <img src="{{asset('images/logo 2.png')}}" alt="" class="img-fluid " style="">
+                     </a>
                   </div>
                </div>
                <div class="col-lg-9 col-md-9">
@@ -19,7 +21,7 @@
                               <li><a href="{{url('/')}}">Acceuil</a></li>
                               <li><a href="{{route('matiere')}}">Matières</a></li>
                               <li><a href="{{route('traveaux_pratqiues')}}">Travaux Pratiques</a></li>
-                              <li><a href="{{route('about')}}"">À propos</a></li>
+                              <li><a href="{{route('about')}}">À propos</a></li>
                               <li><a href=" {{route('contact')}}">Contact</a></li>
                               @auth
                               <li><a href='#'>Moalim</a>

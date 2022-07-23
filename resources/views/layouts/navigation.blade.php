@@ -1,7 +1,7 @@
 <aside class="z-20 hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0 shadow-sm rounded-sm">
    <div class="py-4">
       <a class="ml-6 flex justify-center text-lg  font-bold " href="{{ route('dashboard') }}">
-         Dashboard
+         <img src="{{asset('images/logo.png')}}" alt="" class="img-fluid">
       </a>
 
       <ul class="mt-6">

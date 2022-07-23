@@ -7,6 +7,7 @@
                <div class="single-footer-caption mb-50">
                   <div class="single-footer-caption mb-30">
                      <div class="footer-tittle">
+
                         <h4>À propos</h4>
                         <div class="footer-pera">
                            <p>INKIDIA est une entreprise qui propose des services inédits dans le domaine du
@@ -40,13 +41,10 @@
                   <div class="footer-tittle">
                      <h4>Liens Importants</h4>
                      <ul>
-                        <li><a href="Tp.html">Travaux Pratiques</a></li>
-                        <li><a href="matiere.<html>
-                                   
-                               </html>">Matières</a></li>
-                        <li><a href="annee.html">Années</a></li>
-                        <li><a href="contact.html">Contactez-nous</a></li>
-                        <li><a href="about.html">Support</a></li>
+                        <li><a href="{{route('traveaux_pratqiues')}}">Travaux Pratiques</a></li>
+                        <li><a href="{{route('matiere')}}">Matières</a></li>
+                        <li><a href="{{route('traveaux_pratqiues')}}">Années</a></li>
+                        <li><a href="{{route('contact')}}">Contactez-nous</a></li>
                      </ul>
                   </div>
                </div>
@@ -54,28 +52,12 @@
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                <div class="single-footer-caption mb-50">
                   <div class="footer-tittle">
-                     <h4>Newsletter</h4>
-                     <div class="footer-pera footer-pera2">
-                        <p>Consulter votre Newsletter juste ici</p>
+                     <div class="logo">
+                        <a href="/">
+                           <img src="{{asset('images/logo.png')}}" alt="" class="img-fluid " style="">
+                        </a>
                      </div>
-                     <!-- Form -->
-                     <div class="footer-form">
-                        <div id="mc_embed_signup">
-                           <form target="_blank"
-                              action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                              method="get" class="subscribe_form relative mail_part">
-                              <input type="email" name="email" id="newsletter-form-email" placeholder="Email"
-                                 class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                 onblur="this.placeholder = ' Email'">
-                              <div class="form-icon">
-                                 <button type="submit" name="submit" id="newsletter-submit"
-                                    class="email_icon newsletter-submit button-contactForm"><img
-                                       src="assets/img/icon/form.png" alt=""></button>
-                              </div>
-                              <div class="mt-10 info"></div>
-                           </form>
-                        </div>
-                     </div>
+
                   </div>
                </div>
             </div>
