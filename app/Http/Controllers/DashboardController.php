@@ -9,6 +9,8 @@ use App\Models\Matiere;
 use App\Models\Niveau; 
 use App\Models\Annee; 
 use App\Models\Message; 
+use App\Models\User; 
+use Spatie\Permission\Models\Role;
 
 class DashboardController extends Controller
 {
@@ -22,7 +24,8 @@ class DashboardController extends Controller
       $AnneeCount = Niveau::count() ;
       $messageCount = Message::count() ;
       $messageNonLu = Message::where('read',false)->count() ;
-     
+      $enseignant = User::role('Enseignant')->count();
+      $eleves = User::role('Eleve')->count();
       $data = [
          'tpCount' => $tpCount ,
          'tpNonValide' => $tpNonValide ,
@@ -32,6 +35,8 @@ class DashboardController extends Controller
          'AnneeCount' => $AnneeCount ,
          'messageCount' => $messageCount ,
          'messageNonLu' => $messageNonLu ,
+         'enseignant' => $enseignant ,
+         'eleves' => $eleves ,
       ] ;
 
       switch ( auth()->user()->getRoleNames()[0]) {
