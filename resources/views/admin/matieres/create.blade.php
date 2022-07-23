@@ -6,7 +6,7 @@
       <a href="{{route('matieres.index')}}"
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">Matière</a>
       <span class="text-base font-bold mx-1">/</span>
-      <a href="{{route('matieres.create')}}"
+      <a href="{{isset($matiere) ? route('matieres.edit',$matiere->id) : route('matieres.create') }}"
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">
          @if(!isset($matiere)) Nouvelle @else Mise à jours @endif
       </a>

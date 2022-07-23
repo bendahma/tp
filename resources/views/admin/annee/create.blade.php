@@ -6,7 +6,7 @@
       <a href="{{route('annee.index')}}"
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">Année scolaire</a>
       <span class="text-base font-bold mx-1">/</span>
-      <a href="{{route('annee.create')}}"
+      <a href="{{isset($annee) ? route('annee.edit',$annee->id) : route('annee.create')}}"
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">
          @if(!isset($annee)) Nouvelle @else Mise à jours @endif
       </a>

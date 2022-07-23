@@ -7,7 +7,7 @@
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">Traveaux
          Pratique</a>
       <span class="text-base font-bold mx-1">/</span>
-      <a href="{{route('matieres.create')}}"
+      <a href="{{isset($tp) ? route('tp.edit',$tp->id) : route('tp.create')}}"
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">
          @if(!isset($tp)) Nouvelle @else Mise à jours @endif
       </a>

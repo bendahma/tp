@@ -3,16 +3,12 @@
       <a href="{{url('/')}}" class="uppercase font-semibold text-sm hover:underline hover:text-black hover:font-bold"><i
             class="fas fa-home"> </i></a>
       <span class="text-base font-bold mx-1">/</span>
-      <a href="{{route('matieres.index')}}"
+      <a href="{{route('tp.index')}}"
          class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">TP </a>
       <span class="text-base font-bold mx-1">/</span>
       <a href="" class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">Question
       </a>
-      <span class="text-base font-bold mx-1">/</span>
-      <a href="{{route('matieres.create')}}"
-         class="text-base font-semibold uppercase hover:underline hover:text-black hover:font-bold">
-         @if(!isset($matiere)) Ajouté question @else Mise à jours @endif
-      </a>
+
 
    </x-slot>
    <div class="flex justify-between">
