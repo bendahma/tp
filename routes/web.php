@@ -28,6 +28,7 @@ Route::get('/about',[FrontController::class,'about'])->name('about');
 Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 
 Route::post('/recherche' , [FrontController::class,'recherche'])->name('recherche') ;
+Route::post('/message' , [MessageController::class,'send'])->name('sendMessage') ;
 
 Route::middleware(['auth'])->group(function () {
 

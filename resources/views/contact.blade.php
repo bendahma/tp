@@ -25,7 +25,7 @@
             <h2 class="contact-title">Entrer en contact</h2>
          </div>
          <div class="col-lg-8">
-            <form class="form-contact contact_form" method="post" action="{{route('messages.store')}}">
+            <form class="form-contact contact_form" method="post" action="{{route('sendMessage')}}">
                @csrf
                <div class="row">
                   <div class="col-12">

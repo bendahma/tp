@@ -25,7 +25,7 @@ class MessageController extends Controller
        return view('admin.messages.open',compact('message'));
     }
 
-    public function store(Request $request){
+    public function send(Request $request){
        Message::create([
           'nom' => $request->nom ,
           'email' => $request->email ,
