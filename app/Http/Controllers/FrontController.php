@@ -35,8 +35,11 @@ class FrontController extends Controller
    }
 
     public function  traveaux_matiere(){
-      $matieres = Matiere::all() ; 
+
+      $matieres = Matiere::where('id',1)->orWhere('id',2)->get() ; 
+      
       return view('front.traveau_matiere' , compact('matieres')) ;
+      
     }
     
     public function  traveau_annee(Matiere $matiere){
