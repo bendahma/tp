@@ -1,11 +1,11 @@
 <x-app-layout>
    <x-slot name="header">
-      {{ __('Dashboard') }}
+      <span class="font-bold text-xl tracking-wider">Dashboard</span>
    </x-slot>
 
    @role ('Super Admin')
    @if (isset($data) && !is_null($data))
-   <br><br>
+
    <div class="w-full flex gap-x-10">
       <div class="bg-red-400 rounded-lg shadow-xl w-1/4 h-24 text-centerflex justify-center items-center">
          <div class="h-full font-semibold flex items-center justify-center px-4">
@@ -56,12 +56,12 @@
    <div class="w-full flex gap-x-10">
       <div class="bg-pink-300 rounded-lg shadow-xl w-1/4 h-24 text-centerflex justify-center items-center">
          <div class="h-full font-semibold flex items-center justify-center px-4">
-            Les enseignants : <span class="font-bold text-2xl mx-6"> {{$data['enseignant']}} </span>
+            Les Enseignants : <span class="font-bold text-2xl mx-6"> {{$data['enseignant']}} </span>
          </div>
       </div>
       <div class="bg-cool-gray-300 rounded-lg shadow-xl w-1/4 h-24 text-centerflex justify-center items-center">
          <div class="h-full font-semibold flex items-center justify-center px-4">
-            Les eleves: <span class="font-bold text-2xl mx-6"> {{$data['eleves']}} </span>
+            Les Élèves: <span class="font-bold text-2xl mx-6"> {{$data['eleves']}} </span>
          </div>
       </div>
       <div class="bg-transparent rounded-lg  w-1/4 h-24 text-centerflex justify-center items-center">
@@ -80,5 +80,32 @@
    @endif
 
    @endrole
+   @role ('Enseignant')
+   @if (isset($dataProf) && !is_null($dataProf))
+   <br><br>
+   <div class="w-full flex gap-x-10">
+      <div class="bg-red-400 rounded-lg shadow-xl w-1/4 h-24 text-centerflex justify-center items-center">
+         <div class="h-full font-semibold flex items-center justify-center px-4">
+            Vos Cours : <span class="font-bold text-2xl mx-6"> {{$dataProf['coursProfCount']}} </span>
+         </div>
+      </div>
+      <div class="bg-gray-300 rounded-lg shadow-xl w-1/4 h-24 text-centerflex justify-center items-center">
+         <div class="h-full font-semibold flex items-center justify-center px-4">
+            Vos Cours Non Validé : <span class="font-bold text-2xl mx-6"> {{$dataProf['coursProfNonValide']}} </span>
+         </div>
+      </div>
 
+      <div class="bg-blue-400 rounded-lg shadow-xl w-1/4 h-24 text-centerflex justify-center items-center">
+         <div class="h-full font-semibold flex items-center justify-center px-4">
+            Vos TP : <span class="font-bold text-2xl mx-6"> {{$dataProf['tpProfCount']}} </span>
+         </div>
+      </div>
+      <div class="bg-yellow-300 rounded-lg shadow-xl w-1/4 h-24 text-centerflex justify-center items-center">
+         <div class="h-full font-semibold flex items-center justify-center px-4">
+            Vos TP Non Validé : <span class="font-bold text-2xl mx-6"> {{$dataProf['tpProfNonValide']}} </span>
+         </div>
+      </div>
+   </div>
+   @endif
+   @endrole
 </x-app-layout>

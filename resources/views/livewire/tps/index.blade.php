@@ -105,7 +105,7 @@
                @empty
                <tr>
                   <td colspan="3" class="w-full">
-                     <span class="w-full justify-center font-bold h-10 text-center"> Aucun matière n'existe pour le
+                     <span class="w-full justify-center font-bold h-10 text-center"> Aucun TP n'existe pour le
                         moment </span>
                   </td>
                </tr>

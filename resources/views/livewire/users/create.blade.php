@@ -62,7 +62,7 @@
                         <select class="w-full rounded-lg font-semibold px-4 py-2" wire:model="role">
                            <option selected>Role</option>
                            <option value="Enseignant">Enseignant</option>
-                           <option value="Etudiant">Etudiant</option>
+                           <option value="Eleve">Élève</option>
                         </select>
                      </div>
                   </div>

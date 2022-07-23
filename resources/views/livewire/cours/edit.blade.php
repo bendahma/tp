@@ -65,7 +65,8 @@
                            <td>
                               <div class="px-4 py-2 font-semibold">Fichier du cours</div>
                            </td>
-                           <td class="py-1"><input type="file" class="w-full rounded-lg font-semibold px-4 py-2"
+                           <td class="py-1">
+                              <input type="file" class="w-full rounded-lg font-semibold px-4 py-2"
                                  wire:model="fileSave">
                            </td>
                         </tr>

@@ -29,8 +29,9 @@ class Edit extends Component
 
    public function updatedFileSave(){
       $this->f = $this->fileSave->store('cours','public') ;
-      $this->coursCompnent->file = $this->f ;
-      $this->coursCompnent->save() ;
+      $this->coursCompnent->update([
+         'file' => $this->f ,
+      ]);
         
    }
 

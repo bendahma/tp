@@ -36,7 +36,7 @@ class CoursController extends Controller
    public function validateCours(Cours $cour)
    {
        $cour->update(['validated'=>true]) ;
-       toast('Sucéés','success') ;
+       toast('Succés','success') ;
        return redirect()->back();
    }
 
